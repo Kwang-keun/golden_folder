@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VitaCore — 과학적으로 검증된 건강 기능식품. 비타민 효능 정보부터 맞춤 추천까지. 당신의 건강을 설계하는 프리미엄 영양 솔루션.">
+  <meta name="keywords" content="건강기능식품, 비타민, 영양제, 마그네슘, 오메가3, 프로바이오틱스, 면역력">
+  <meta property="og:title" content="VitaCore — 건강 기능식품 전문">
+  <meta property="og:description" content="과학적으로 검증된 비타민·미네랄 정보와 TOP 10 추천 제품">
+  <meta property="og:type" content="website">
+  <title>VitaCore — 건강 기능식품 전문 쇼핑몰</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════
+       NAVIGATION
+  ══════════════════════════════ -->
+  <nav class="nav" role="navigation" aria-label="메인 네비게이션">
+    <div class="nav__inner">
+
+      <a href="#" class="nav__logo" aria-label="VitaCore 홈">
+        <div class="nav__logo-mark">V</div>
+        <span class="nav__logo-text">Vita<span>Core</span></span>
+      </a>
+
+      <ul class="nav__links" role="list">
+        <li><a href="#vitamins">비타민 사전</a></li>
+        <li><a href="#products">인기 제품</a></li>
+        <li><a href="#goals">건강 고민</a></li>
+        <li><a href="pages/quiz.html">맞춤 추천</a></li>
+        <li><a href="pages/products.html">전체 제품</a></li>
+      </ul>
+
+      <div class="nav__cta">
+        <a href="pages/cart.html" class="nav__cart" aria-label="장바구니">
+          <i class="fa-solid fa-bag-shopping" style="font-size:0.9rem;"></i>
+          <span class="nav__cart-badge">0</span>
+        </a>
+        <a href="pages/quiz.html" class="btn btn-primary">
+          내 맞춤 추천 →
+        </a>
+      </div>
+
+      <button class="mobile-menu-btn" aria-label="메뉴 열기" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </nav>
+
+
+  <!-- ══════════════════════════════
+       HERO
+  ══════════════════════════════ -->
+  <header class="hero" id="hero" role="banner">
+    <div class="hero__bg"></div>
+    <div class="hero__grid-lines"></div>
+
+    <div class="container">
+      <div class="hero__content">
+
+        <!-- Left: Text -->
+        <div class="hero__text">
+          <div class="hero__eyebrow">
+            <div class="hero__eyebrow-line"></div>
+            <span class="section-label">Since 2024 · 식약처 인증 원료</span>
+          </div>
+
+          <h1 class="display-xl hero__title">
+            건강을<br>
+            <em>과학으로</em><br>
+            설계하다
+          </h1>
+
+          <p class="hero__desc">
+            복잡한 성분 정보를 명확하게. 비타민 A부터 K까지, 당신의 몸에 꼭 맞는 영양소를 찾아드립니다. 근거 중심 정보와 엄선된 제품으로 진짜 건강을 시작하세요.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#vitamins" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2rem;">
+              비타민 효능 알아보기
+            </a>
+            <a href="#products" class="btn btn-ghost">
+              인기 제품 보기 <i class="fa-solid fa-arrow-right" style="font-size:0.8rem;"></i>
+            </a>
+          </div>
+
+          <div class="hero__stats">
+            <div>
+              <div class="hero__stat-value">200+</div>
+              <div class="hero__stat-label">검증된 제품</div>
+            </div>
+            <div>
+              <div class="hero__stat-value">50만</div>
+              <div class="hero__stat-label">누적 구매 고객</div>
+            </div>
+            <div>
+              <div class="hero__stat-value">4.8★</div>
+              <div class="hero__stat-label">평균 고객 평점</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Visual -->
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__orb">
+            <div class="hero__molecule">
+              <span class="molecule-text">VitC</span>
+            </div>
+          </div>
+
+          <!-- Float card 1 -->
+          <div class="hero__float-card">
+            <div class="float-card__label">오늘의 추천</div>
+            <div class="float-card__value">비타민 D3</div>
+            <div class="float-card__sub">☀️ 면역 + 뼈 건강</div>
+          </div>
+
+          <!-- Float card 2 -->
+          <div class="hero__float-card">
+            <div class="float-card__label">이 달 1위</div>
+            <div class="float-card__value">마그네슘</div>
+            <div class="float-card__sub">🌙 수면의 질 개선</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ══════════════════════════════
+       VITAMINS SECTION
+  ══════════════════════════════ -->
+  <section class="vitamins-section section" id="vitamins" aria-labelledby="vitamins-title">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-label">Vitamin Encyclopedia</span>
+        <h2 class="section-title" id="vitamins-title">비타민 효능 사전</h2>
+        <p>비타민 A부터 K까지. 각 영양소의 효능, 권장 섭취량, 결핍 증상을 과학적 근거로 정리했습니다.</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="vitamins-tabs reveal reveal-delay-1" role="tablist" aria-label="비타민 필터">
+        <button class="vitamin-tab active" data-filter="all" role="tab" aria-selected="true">전체</button>
+        <button class="vitamin-tab" data-filter="fat" role="tab" aria-selected="false">지용성 (A·D·E·K)</button>
+        <button class="vitamin-tab" data-filter="water" role="tab" aria-selected="false">수용성 (B군·C)</button>
+      </div>
+
+      <!-- Vitamins Grid — rendered by JS -->
+      <div class="vitamins-grid" id="vitamins-grid" role="list"></div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════
+       TOP 10 PRODUCTS
+  ══════════════════════════════ -->
+  <section class="products-section section" id="products" aria-labelledby="products-title">
+    <div class="container">
+
+      <div class="section-header section-header--center reveal">
+        <span class="section-label">Customer Favorites</span>
+        <h2 class="section-title" id="products-title">이 달의 TOP 10</h2>
+        <p>실제 구매 데이터와 고객 리뷰를 기반으로 선별한 가장 신뢰받는 건강 기능식품입니다.</p>
+      </div>
+
+      <!-- Products Grid — rendered by JS -->
+      <div class="products-grid" id="products-grid" role="list"></div>
+
+      <div style="text-align:center; margin-top: var(--space-2xl);">
+        <a href="pages/products.html" class="btn btn-outline" style="padding:0.85rem 2.5rem;font-size:1rem;">
+          전체 제품 보기 →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════
+       HEALTH GOALS
+  ══════════════════════════════ -->
+  <section class="goals-section section" id="goals" aria-labelledby="goals-title">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-label">Find Your Solution</span>
+        <h2 class="section-title" id="goals-title">건강 고민별<br><em>솔루션</em></h2>
+        <p>어떤 건강 고민이 있으신가요? 고민에 맞는 영양 솔루션을 바로 찾아보세요.</p>
+      </div>
+
+      <!-- Goals Grid — rendered by JS -->
+      <div class="goals-grid" id="goals-grid" role="list"></div>
+
+      <div style="margin-top: var(--space-2xl);">
+        <a href="pages/quiz.html" class="btn btn-primary" style="padding:0.85rem 2.5rem;font-size:1rem;">
+          🎯 나에게 딱 맞는 영양제 찾기
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════
+       NEWSLETTER
+  ══════════════════════════════ -->
+  <section class="newsletter-section" aria-labelledby="newsletter-title">
+    <div class="container">
+      <div class="newsletter-inner reveal">
+        <span class="section-label" style="display:block;margin-bottom:var(--space-md);">Weekly Health Tip</span>
+        <h2 class="section-title" id="newsletter-title">건강 인사이트를<br><em>매주 무료로</em></h2>
+        <p>최신 영양학 연구, 계절별 추천 영양소, 독점 할인까지. 주 1회 이메일로 받아보세요.</p>
+
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)" novalidate>
+          <label for="newsletter-email" class="sr-only">이메일 주소</label>
+          <input
+            type="email"
+            id="newsletter-email"
+            class="newsletter-input"
+            placeholder="이메일 주소를 입력하세요"
+            required
+            autocomplete="email"
+          >
+          <button type="submit" class="btn btn-primary">구독하기</button>
+        </form>
+
+        <p style="font-size:0.75rem;color:var(--clr-text-3);margin-top:var(--space-md);">
+          언제든지 구독 취소 가능 · 스팸 없음 · 개인정보 보호
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════
+       FOOTER
+  ══════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+
+        <!-- Brand -->
+        <div class="footer__brand">
+          <a href="#" class="nav__logo" style="margin-bottom:var(--space-md);">
+            <div class="nav__logo-mark">V</div>
+            <span class="nav__logo-text">Vita<span>Core</span></span>
+          </a>
+          <p>과학적으로 검증된 건강 기능식품으로 더 나은 삶을 설계합니다. 식약처 인정 기능성 원료만을 사용합니다.</p>
+        </div>
+
+        <!-- Products -->
+        <div class="footer__col">
+          <h4>제품</h4>
+          <ul>
+            <li><a href="pages/products.html">전체 제품</a></li>
+            <li><a href="pages/products.html#vitamins">비타민</a></li>
+            <li><a href="pages/products.html#minerals">미네랄</a></li>
+            <li><a href="pages/products.html#omega">오메가·지방산</a></li>
+            <li><a href="pages/products.html#probiotics">프로바이오틱스</a></li>
+          </ul>
+        </div>
+
+        <!-- Info -->
+        <div class="footer__col">
+          <h4>정보</h4>
+          <ul>
+            <li><a href="#vitamins">비타민 사전</a></li>
+            <li><a href="pages/quiz.html">맞춤 추천</a></li>
+            <li><a href="#">건강 블로그</a></li>
+            <li><a href="#">연구·임상 정보</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="footer__col">
+          <h4>고객 지원</h4>
+          <ul>
+            <li><a href="pages/mypage.html">마이페이지</a></li>
+            <li><a href="#">주문·배송</a></li>
+            <li><a href="#">교환·반품</a></li>
+            <li><a href="#">1:1 문의</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2026 VitaCore. All rights reserved.</span>
+        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--clr-text-3);">
+          본 제품은 질병의 예방·치료를 목적으로 하지 않습니다
+        </span>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ── Visually hidden utility ── -->
+  <style>
+    .sr-only {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+  </style>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
