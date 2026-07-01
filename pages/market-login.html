@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>로그인 | GoldenKP 리포트</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/market-report.css" />
+  <style>
+    body { background: var(--gray-100); }
+    .auth-wrap {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 100px 24px 48px;
+    }
+    .auth-box {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      width: 100%; max-width: 440px;
+      overflow: hidden;
+    }
+    .auth-header {
+      background: linear-gradient(135deg, var(--navy-800), var(--navy-600));
+      padding: 32px;
+      text-align: center;
+    }
+    .auth-header h1 { color: var(--white); font-size: 22px; font-weight: 800; }
+    .auth-header p { color: rgba(255,255,255,.6); font-size: 13px; margin-top: 6px; }
+    .auth-body { padding: 32px; }
+    .form-group { margin-bottom: 20px; }
+    .form-label {
+      display: block; font-size: 13px; font-weight: 600;
+      color: var(--navy-800); margin-bottom: 8px;
+    }
+    .form-input {
+      width: 100%; padding: 12px 14px;
+      border: 1.5px solid var(--gray-200); border-radius: var(--radius-sm);
+      font-size: 14px; font-family: inherit; color: var(--gray-800);
+      transition: border-color .2s; outline: none;
+      background: var(--white);
+    }
+    .form-input:focus { border-color: var(--mint-500); }
+    .form-input::placeholder { color: var(--gray-400); }
+    .btn-submit {
+      width: 100%; padding: 14px;
+      background: linear-gradient(135deg, var(--mint-500), var(--mint-400));
+      color: var(--navy-800); border: none; border-radius: var(--radius-sm);
+      font-size: 15px; font-weight: 700; cursor: pointer;
+      font-family: inherit; transition: all .25s;
+      box-shadow: 0 4px 16px rgba(0,201,167,.3);
+    }
+    .btn-submit:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,201,167,.4); }
+    .btn-submit:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+    .auth-footer {
+      text-align: center; margin-top: 24px;
+      font-size: 13px; color: var(--gray-600);
+    }
+    .auth-footer a { color: var(--mint-500); font-weight: 700; text-decoration: none; }
+    .auth-footer a:hover { text-decoration: underline; }
+    .msg {
+      padding: 12px 16px; border-radius: var(--radius-sm);
+      font-size: 13px; margin-bottom: 20px; display: none;
+    }
+    .msg-success { background: var(--mint-50); border: 1.5px solid var(--mint-300); color: #0a7c65; }
+    .msg-error { background: #fff0f0; border: 1.5px solid #fca5a5; color: #b91c1c; }
+    .msg.show { display: block; }
+    .divider { height: 1px; background: var(--gray-200); margin: 24px 0; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="market_rs.html">
+    <img src="../img/gk_logo.png" alt="GoldenKP 로고" class="nav__logo-mark nav__logo-img">
+    <span class="nav-logo-text">Golden<span>KP</span></span>
+  </a>
+  <div id="nav-auth" class="nav__auth"></div>
+</nav>
+
+<div class="auth-wrap">
+  <div class="auth-box">
+    <div class="auth-header">
+      <h1>로그인</h1>
+      <p>GoldenKP 리포트 서비스</p>
+    </div>
+    <div class="auth-body">
+      <div class="msg msg-success" id="msgSuccess"></div>
+      <div class="msg msg-error" id="msgError"></div>
+
+      <div class="form-group">
+        <label class="form-label">이메일</label>
+        <input type="email" class="form-input" id="email" placeholder="example@email.com" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">비밀번호</label>
+        <input type="password" class="form-input" id="password" placeholder="비밀번호 입력" />
+      </div>
+
+      <button class="btn-submit" id="btnLogin" onclick="handleLogin()">로그인</button>
+
+      <div class="divider"></div>
+      <div class="auth-footer">
+        계정이 없으신가요? <a href="market-signup.html">회원가입</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+
+      <div class="footer__brand">
+        <a href="../index.html" class="nav__logo" style="margin-bottom:var(--space-md);">
+          <img src="../img/gk_logo.png" alt="GoldenKP 로고" class="nav__logo-mark nav__logo-img">
+          <span class="nav__logo-text">Golden<span>KP</span></span>
+        </a>
+        <p>지식과 기술로 새로운 가치를 만드는 1인 지식기업.<br>
+        eSPORTS · 건강기능식품 · 동네마켓서비스 · 시장조사 리포트</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>사업분야</h4>
+        <ul>
+          <li><a href="business.html">eSPORTS 협력사업</a></li>
+          <li><a href="shop.html">건강기능식품 쇼핑몰</a></li>
+          <li><a href="dongne.html">동네마켓서비스</a></li>
+          <li><a href="market_rs.html">시장조사 리포트</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>정보</h4>
+        <ul>
+          <li><a href="privacy.html">개인정보처리방침</a></li>
+          <li><a href="mailto:signal386@empas.com">이메일 문의</a></li>
+          <li><a href="https://goldenkp.com">goldenkp.com</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__legal">
+      <div class="footer__policies">
+        <a href="terms.html">이용약관</a>
+        <a href="privacy.html">개인정보처리방침</a>
+      </div>
+      <!-- 사업 개시 전까지 비공개: 오픈 시 아래 "footer__company-info--pending" 클래스와 안내 문구(footer__pending-note)를 제거하세요 -->
+      <div class="footer__company-info footer__company-info--pending">
+        <span>상호명: 골든케이피 크리에티브랩</span>
+        <span>대표자: 함광근</span>
+        <span>사업자등록번호: 233-21-02210</span>
+        <span>주소: 서울특별시 강동구 고덕로16길 44-9, 3층 301호 (암사동)</span><br>
+        <span>대표번호: </span>
+        <span>통신판매업신고번호: 제2023-서울강동-2521호</span>
+      </div>
+      <p class="footer__pending-note">※ 사업자 정보는 사업 개시 후 공개됩니다.</p>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© 2026 GoldenKP / 함광근. All rights reserved.</span>
+      <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--clr-text-3);">
+        문의: signal386@empas.com
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/auth.js"></script>
+<script>
+  // 이메일 인증 완료 후 리다이렉트 처리
+  (async () => {
+    const hash = window.location.hash;
+    if (hash.includes('access_token') || hash.includes('type=signup')) {
+      const msgSuccess = document.getElementById('msgSuccess');
+      msgSuccess.textContent = '✅ 이메일 인증이 완료됐습니다! 로그인해 주세요.';
+      msgSuccess.classList.add('show');
+    }
+    const user = await getUser();
+    if (user) {
+      window.location.href = 'market_rs.html';
+    }
+  })();
+
+  updateNav();
+
+  async function handleLogin() {
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+    const btn = document.getElementById('btnLogin');
+    const msgError = document.getElementById('msgError');
+    const msgSuccess = document.getElementById('msgSuccess');
+
+    msgError.classList.remove('show');
+
+    if (!email || !password) {
+      msgError.textContent = '이메일과 비밀번호를 입력해 주세요.';
+      msgError.classList.add('show');
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = '로그인 중...';
+
+    const { error } = await db.auth.signInWithPassword({ email, password });
+
+    btn.disabled = false;
+    btn.textContent = '로그인';
+
+    if (error) {
+      if (error.message.includes('Invalid login')) {
+        msgError.textContent = '이메일 또는 비밀번호가 올바르지 않습니다.';
+      } else if (error.message.includes('Email not confirmed')) {
+        msgError.textContent = '이메일 인증이 필요합니다. 받은 편지함을 확인해 주세요.';
+      } else {
+        msgError.textContent = '오류: ' + error.message;
+      }
+      msgError.classList.add('show');
+    } else {
+      window.location.href = 'market_rs.html';
+    }
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Enter') handleLogin();
+  });
+</script>
+</body>
+</html>

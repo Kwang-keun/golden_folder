@@ -12,33 +12,66 @@
   <link rel="stylesheet" href="css/styles.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .construction-banner {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 36px;
+      z-index: 1001;
+      overflow: hidden;
+      background: var(--clr-gold);
+      display: flex;
+      align-items: center;
+    }
+    .construction-banner__track {
+      display: flex;
+      white-space: nowrap;
+      animation: construction-marquee 18s linear infinite;
+    }
+    .construction-banner__track span {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--clr-bg);
+      letter-spacing: 0.05em;
+      padding-right: 3rem;
+    }
+    @keyframes construction-marquee {
+      from { transform: translateX(-50%); }
+      to   { transform: translateX(0%); }
+    }
+    body.has-construction-banner .nav {
+      top: 36px;
+    }
+    body.has-construction-banner .hero {
+      padding-top: calc(var(--nav-height) + 36px);
+    }
+  </style>
 </head>
-<body>
+<body class="has-construction-banner">
 
   <!-- ══════════════════════════════
        UNDER CONSTRUCTION BANNER
   ══════════════════════════════ -->
-  <div style="
-    background: repeating-linear-gradient(
-      45deg,
-      #f5a623,
-      #f5a623 20px,
-      #1a1a1a 20px,
-      #1a1a1a 40px
-    );
-    color: #fff;
-    text-align: center;
-    padding: 14px 20px;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.5);
-  ">
-    🚧 UNDER CONSTRUCTION &nbsp;|&nbsp; 홈페이지 공사중입니다!!! 🚧
+  <div class="construction-banner" role="status" aria-label="공사중 안내">
+    <div class="construction-banner__track">
+      <span>🚧 공사중!!! Under Construction!!!</span>
+      <span>🚧 공사중!!! Under Construction!!!</span>
+      <span>🚧 공사중!!! Under Construction!!!</span>
+      <span>🚧 공사중!!! Under Construction!!!</span>
+      <span>🚧 공사중!!! Under Construction!!!</span>
+      <span>🚧 공사중!!! Under Construction!!!</span>
+      <span>🚧 공사중!!! Under Construction!!!</span>
+      <span>🚧 공사중!!! Under Construction!!!</span>
+      <span>🚧 공사중!!! Under Construction!!!</span>
+      <span>🚧 공사중!!! Under Construction!!!</span>
+      <span>🚧 공사중!!! Under Construction!!!</span>
+      <span>🚧 공사중!!! Under Construction!!!</span>
+      <span>🚧 공사중!!! Under Construction!!!</span>
+      <span>🚧 공사중!!! Under Construction!!!</span>
+      <span>🚧 공사중!!! Under Construction!!!</span>
+      <span>🚧 공사중!!! Under Construction!!!</span>
+    </div>
   </div>
 
   <!-- ══════════════════════════════
@@ -47,27 +80,32 @@
   <nav class="nav" role="navigation" aria-label="메인 네비게이션">
     <div class="nav__inner">
 
-      <a href="#" class="nav__logo" aria-label="VitaCore 홈">
-        <div class="nav__logo-mark">V</div>
-        <span class="nav__logo-text">Vita<span>Core</span></span>
+      <a href="#" class="nav__logo" aria-label="GoldenKP 홈">
+        <img src="img/gk_logo.png" alt="GoldenKP 로고" class="nav__logo-mark nav__logo-img">
+        <span class="nav__logo-text">Golden<span>KP</span></span>
       </a>
 
       <ul class="nav__links" role="list">
-        <li><a href="#vitamins">비타민 사전</a></li>
-        <li><a href="#products">인기 제품</a></li>
-        <li><a href="#goals">건강 고민</a></li>
-        <li><a href="pages/quiz.html">맞춤 추천</a></li>
-        <li><a href="pages/products.html">전체 제품</a></li>
+        <li><a href="pages/about.html">회사 소개</a></li>
+        <li class="nav__dropdown">
+          <button class="nav__dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">사업분야</button>
+          <ul class="nav__dropdown-menu" role="list">
+            <li><a href="pages/business.html">eSPORTS 협력사업</a></li>
+            <li><a href="pages/shop.html">건강기능식품 쇼핑몰</a></li>
+            <li><a href="pages/dongne.html">동네마켓서비스</a></li>
+            <li><a href="pages/market_rs.html">시장조사 리포트</a></li>
+          </ul>
+        </li>
+        <li><a href="pages/notice.html">공지사항</a></li>
       </ul>
 
       <div class="nav__cta">
-        <a href="pages/cart.html" class="nav__cart" aria-label="장바구니">
-          <i class="fa-solid fa-bag-shopping" style="font-size:0.9rem;"></i>
-          <span class="nav__cart-badge">0</span>
-        </a>
-        <a href="pages/quiz.html" class="btn btn-primary">
-          내 맞춤 추천 →
-        </a>
+        <a href="index.html" class="btn btn-primary">← 홈으로</a>
+      </div>
+
+      <div id="nav-auth" class="nav__auth">
+        <a href="pages/market-login.html" class="nav__auth-link">로그인</a>
+        <a href="pages/market-signup.html" class="nav__auth-cta">회원가입</a>
       </div>
 
       <button class="mobile-menu-btn" aria-label="메뉴 열기" aria-expanded="false">
@@ -94,40 +132,44 @@
         <div class="hero__text">
           <div class="hero__eyebrow">
             <div class="hero__eyebrow-line"></div>
-            <span class="section-label">Since 2024 · 식약처 인증 원료</span>
+            <span class="section-label">Solo Knowledge Entrepreneur · Since 2024</span>
           </div>
 
           <h1 class="display-xl hero__title">
-            건강을<br>
-            <em>과학으로</em><br>
-            설계하다
+            지식과 기술로<br>
+            <em>새로운 가치를</em><br>
+            만듭니다
           </h1>
 
           <p class="hero__desc">
-            복잡한 성분 정보를 명확하게. 비타민 A부터 K까지, 당신의 몸에 꼭 맞는 영양소를 찾아드립니다. 근거 중심 정보와 엄선된 제품으로 진짜 건강을 시작하세요.
+            eSPORTS · 건강기능식품 · 동네마켓서비스 · 시장조사 리포트.<br>GoldenKP는 혼자서도 기업처럼 움직입니다.
           </p>
 
           <div class="hero__actions">
-            <a href="#vitamins" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2rem;">
-              비타민 효능 알아보기
+            <a href="pages/shop.html" class="btn btn-primary"
+               style="font-size:1rem;padding:0.85rem 2rem;font-weight:700;
+                      background:var(--clr-gold);color:var(--clr-bg);">
+              🛒 쇼핑몰 바로가기
             </a>
-            <a href="#products" class="btn btn-ghost">
-              인기 제품 보기 <i class="fa-solid fa-arrow-right" style="font-size:0.8rem;"></i>
+            <a href="pages/market_rs.html" class="btn btn-primary"
+               style="font-size:1rem;padding:0.85rem 2rem;font-weight:700;
+                      background:var(--clr-primary);color:var(--clr-bg);">
+              📊 시장조사 리포트 바로가기
             </a>
           </div>
 
           <div class="hero__stats">
             <div>
-              <div class="hero__stat-value">200+</div>
-              <div class="hero__stat-label">검증된 제품</div>
+              <div class="hero__stat-value">2+</div>
+              <div class="hero__stat-label">출시 앱</div>
             </div>
             <div>
-              <div class="hero__stat-value">50만</div>
-              <div class="hero__stat-label">누적 구매 고객</div>
+              <div class="hero__stat-value">5년+</div>
+              <div class="hero__stat-label">업력</div>
             </div>
             <div>
-              <div class="hero__stat-value">4.8★</div>
-              <div class="hero__stat-label">평균 고객 평점</div>
+              <div class="hero__stat-value">100%</div>
+              <div class="hero__stat-label">1인 제작</div>
             </div>
           </div>
         </div>
@@ -142,16 +184,23 @@
 
           <!-- Float card 1 -->
           <div class="hero__float-card">
-            <div class="float-card__label">오늘의 추천</div>
-            <div class="float-card__value">비타민 D3</div>
-            <div class="float-card__sub">☀️ 면역 + 뼈 건강</div>
+            <div class="float-card__label">신규 앱</div>
+            <div class="float-card__value">동네정보</div>
+            <div class="float-card__sub">🏘️ Google Play 출시예정</div>
           </div>
 
           <!-- Float card 2 -->
           <div class="hero__float-card">
-            <div class="float-card__label">이 달 1위</div>
-            <div class="float-card__value">마그네슘</div>
-            <div class="float-card__sub">🌙 수면의 질 개선</div>
+            <div class="float-card__label">사업영역</div>
+            <div class="float-card__value">4개 분야</div>
+            <div class="float-card__sub">📊 e스포츠·쇼핑몰·앱마켓·리포트</div>
+          </div>
+
+          <!-- Float card 3 -->
+          <div class="hero__float-card">
+            <div class="float-card__label float-card__label--white">리포트</div>
+            <div class="float-card__value">시장동향</div>
+            <div class="float-card__sub">📈 e스포츠 시장동향외</div>
           </div>
         </div>
 
@@ -161,108 +210,17 @@
 
 
   <!-- ══════════════════════════════
-       VITAMINS SECTION
+       PARTNERS SECTION
   ══════════════════════════════ -->
-  <section class="vitamins-section section" id="vitamins" aria-labelledby="vitamins-title">
+  <section class="partners-section section" id="partners" style="text-align:center;">
     <div class="container">
-
-      <div class="section-header reveal">
-        <span class="section-label">Vitamin Encyclopedia</span>
-        <h2 class="section-title" id="vitamins-title">비타민 효능 사전</h2>
-        <p>비타민 A부터 K까지. 각 영양소의 효능, 권장 섭취량, 결핍 증상을 과학적 근거로 정리했습니다.</p>
+      <span class="section-label">Our Partners</span>
+      <div class="partners-strip reveal">
+        <img src="img/iesi_logo.png" alt="국제eSPORTS진흥원 경기북부연합회" class="partners-strip__logo">
+        <img src="img/saka_logo.png" alt="한국생활체육총연맹" class="partners-strip__logo">
+        <img src="img/kmc_logo.png" alt="한국무예위원회" class="partners-strip__logo">
       </div>
-
-      <!-- Filter Tabs -->
-      <div class="vitamins-tabs reveal reveal-delay-1" role="tablist" aria-label="비타민 필터">
-        <button class="vitamin-tab active" data-filter="all" role="tab" aria-selected="true">전체</button>
-        <button class="vitamin-tab" data-filter="fat" role="tab" aria-selected="false">지용성 (A·D·E·K)</button>
-        <button class="vitamin-tab" data-filter="water" role="tab" aria-selected="false">수용성 (B군·C)</button>
-      </div>
-
-      <!-- Vitamins Grid — rendered by JS -->
-      <div class="vitamins-grid" id="vitamins-grid" role="list"></div>
-
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════
-       TOP 10 PRODUCTS
-  ══════════════════════════════ -->
-  <section class="products-section section" id="products" aria-labelledby="products-title">
-    <div class="container">
-
-      <div class="section-header section-header--center reveal">
-        <span class="section-label">Customer Favorites</span>
-        <h2 class="section-title" id="products-title">이 달의 TOP 10</h2>
-        <p>실제 구매 데이터와 고객 리뷰를 기반으로 선별한 가장 신뢰받는 건강 기능식품입니다.</p>
-      </div>
-
-      <!-- Products Grid — rendered by JS -->
-      <div class="products-grid" id="products-grid" role="list"></div>
-
-      <div style="text-align:center; margin-top: var(--space-2xl);">
-        <a href="pages/products.html" class="btn btn-outline" style="padding:0.85rem 2.5rem;font-size:1rem;">
-          전체 제품 보기 →
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════
-       HEALTH GOALS
-  ══════════════════════════════ -->
-  <section class="goals-section section" id="goals" aria-labelledby="goals-title">
-    <div class="container">
-
-      <div class="section-header reveal">
-        <span class="section-label">Find Your Solution</span>
-        <h2 class="section-title" id="goals-title">건강 고민별<br><em>솔루션</em></h2>
-        <p>어떤 건강 고민이 있으신가요? 고민에 맞는 영양 솔루션을 바로 찾아보세요.</p>
-      </div>
-
-      <!-- Goals Grid — rendered by JS -->
-      <div class="goals-grid" id="goals-grid" role="list"></div>
-
-      <div style="margin-top: var(--space-2xl);">
-        <a href="pages/quiz.html" class="btn btn-primary" style="padding:0.85rem 2.5rem;font-size:1rem;">
-          🎯 나에게 딱 맞는 영양제 찾기
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════
-       NEWSLETTER
-  ══════════════════════════════ -->
-  <section class="newsletter-section" aria-labelledby="newsletter-title">
-    <div class="container">
-      <div class="newsletter-inner reveal">
-        <span class="section-label" style="display:block;margin-bottom:var(--space-md);">Weekly Health Tip</span>
-        <h2 class="section-title" id="newsletter-title">건강 인사이트를<br><em>매주 무료로</em></h2>
-        <p>최신 영양학 연구, 계절별 추천 영양소, 독점 할인까지. 주 1회 이메일로 받아보세요.</p>
-
-        <form class="newsletter-form" onsubmit="handleNewsletter(event)" novalidate>
-          <label for="newsletter-email" class="sr-only">이메일 주소</label>
-          <input
-            type="email"
-            id="newsletter-email"
-            class="newsletter-input"
-            placeholder="이메일 주소를 입력하세요"
-            required
-            autocomplete="email"
-          >
-          <button type="submit" class="btn btn-primary">구독하기</button>
-        </form>
-
-        <p style="font-size:0.75rem;color:var(--clr-text-3);margin-top:var(--space-md);">
-          언제든지 구독 취소 가능 · 스팸 없음 · 개인정보 보호
-        </p>
-      </div>
+      <a href="pages/business.html#partners" class="partners-strip__link">협력기관 자세히 보기 →</a>
     </div>
   </section>
 
@@ -274,57 +232,57 @@
     <div class="container">
       <div class="footer__grid">
 
-        <!-- Brand -->
         <div class="footer__brand">
           <a href="#" class="nav__logo" style="margin-bottom:var(--space-md);">
-            <div class="nav__logo-mark">V</div>
-            <span class="nav__logo-text">Vita<span>Core</span></span>
+            <img src="img/gk_logo.png" alt="GoldenKP 로고" class="nav__logo-mark nav__logo-img">
+            <span class="nav__logo-text">Golden<span>KP</span></span>
           </a>
-          <p>과학적으로 검증된 건강 기능식품으로 더 나은 삶을 설계합니다. 식약처 인정 기능성 원료만을 사용합니다.</p>
+          <p>지식과 기술로 새로운 가치를 만드는 1인 지식기업.<br>
+          eSPORTS · 건강기능식품 · 동네마켓서비스 · 시장조사 리포트</p>
         </div>
 
-        <!-- Products -->
         <div class="footer__col">
-          <h4>제품</h4>
+          <h4>사업분야</h4>
           <ul>
-            <li><a href="pages/products.html">전체 제품</a></li>
-            <li><a href="pages/products.html#vitamins">비타민</a></li>
-            <li><a href="pages/products.html#minerals">미네랄</a></li>
-            <li><a href="pages/products.html#omega">오메가·지방산</a></li>
-            <li><a href="pages/products.html#probiotics">프로바이오틱스</a></li>
+            <li><a href="pages/business.html">eSPORTS 협력사업</a></li>
+            <li><a href="pages/shop.html">건강기능식품 쇼핑몰</a></li>
+            <li><a href="pages/dongne.html">동네마켓서비스</a></li>
+            <li><a href="pages/market_rs.html">시장조사 리포트</a></li>
           </ul>
         </div>
 
-        <!-- Info -->
         <div class="footer__col">
           <h4>정보</h4>
           <ul>
-            <li><a href="#vitamins">비타민 사전</a></li>
-            <li><a href="pages/quiz.html">맞춤 추천</a></li>
-            <li><a href="#">건강 블로그</a></li>
-            <li><a href="#">연구·임상 정보</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
-        </div>
-
-        <!-- Support -->
-        <div class="footer__col">
-          <h4>고객 지원</h4>
-          <ul>
-            <li><a href="pages/mypage.html">마이페이지</a></li>
-            <li><a href="#">주문·배송</a></li>
-            <li><a href="#">교환·반품</a></li>
-            <li><a href="#">1:1 문의</a></li>
-            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="pages/privacy.html">개인정보처리방침</a></li>
+            <li><a href="mailto:signal386@empas.com">이메일 문의</a></li>
+            <li><a href="https://goldenkp.com">goldenkp.com</a></li>
           </ul>
         </div>
 
       </div>
 
+      <div class="footer__legal">
+        <div class="footer__policies">
+          <a href="pages/terms.html">이용약관</a>
+          <a href="pages/privacy.html">개인정보처리방침</a>
+        </div>
+        <!-- 사업 개시 전까지 비공개: 오픈 시 아래 "footer__company-info--pending" 클래스와 안내 문구(footer__pending-note)를 제거하세요 -->
+        <div class="footer__company-info footer__company-info--pending">
+          <span>상호명: 골든케이피 크리에티브랩</span>
+          <span>대표자: 함광근</span>
+          <span>사업자등록번호: 233-21-02210</span>
+          <span>주소: 서울특별시 강동구 고덕로16길 44-9, 3층 301호 (암사동)</span><br>
+          <span>대표번호: </span>
+          <span>통신판매업신고번호: 제2023-서울강동-2521호</span>
+        </div>
+        <p class="footer__pending-note">※ 사업자 정보는 사업 개시 후 공개됩니다.</p>
+      </div>
+
       <div class="footer__bottom">
-        <span>© 2026 VitaCore. All rights reserved.</span>
+        <span>© 2026 GoldenKP / 함광근. All rights reserved.</span>
         <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--clr-text-3);">
-          본 제품은 질병의 예방·치료를 목적으로 하지 않습니다
+          문의: signal386@empas.com
         </span>
       </div>
     </div>
@@ -341,5 +299,8 @@
   </style>
 
   <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/auth.js"></script>
+  <script>updateNav();</script>
 </body>
 </html>

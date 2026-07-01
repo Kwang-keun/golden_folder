@@ -206,6 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initToasts();
   initMobileMenu();
   initVitaminTabs();
+  initNavDropdown();
 });
 
 /* ─── Navigation ─── */
@@ -382,6 +383,33 @@ function initMobileMenu() {
     links.style.cssText = isOpen
       ? ''
       : 'display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--clr-bg);padding:1.5rem;border-bottom:1px solid var(--clr-border);gap:1rem;';
+  });
+}
+
+/* ─── Nav Dropdown ─── */
+function initNavDropdown() {
+  const dropdown = document.querySelector('.nav__dropdown');
+  const toggle = document.querySelector('.nav__dropdown-toggle');
+  if (!dropdown || !toggle) return;
+
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = dropdown.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      dropdown.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
   });
 }
 

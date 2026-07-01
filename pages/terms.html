@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이용약관 — GoldenKP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green-900: #0d2818;
+      --green-700: #1e5230;
+      --green-600: #2d7a47;
+      --green-400: #52c272;
+      --green-100: #d4f0dd;
+      --gold:      #c9a84c;
+      --gold-lt:   #e8c97a;
+      --white:     #ffffff;
+      --gray-50:   #f8faf9;
+      --gray-100:  #eef2f0;
+      --gray-200:  #d5ddd8;
+      --gray-500:  #7a8c80;
+      --gray-700:  #3d4f44;
+      --ink:       #111f16;
+      --font-ko: 'Noto Sans KR', sans-serif;
+      --font-en: 'Inter', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-ko);
+      background: var(--white);
+      color: var(--ink);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    .nav {
+      background: var(--green-900);
+      padding: 0 1.5rem;
+    }
+    .nav__inner {
+      max-width: 900px; margin: 0 auto;
+      display: flex; align-items: center; gap: 1rem;
+      height: 60px;
+    }
+    .nav__logo {
+      display: flex; align-items: center; gap: .6rem;
+      text-decoration: none;
+    }
+    .nav__logo-mark {
+      width: 30px; height: 30px;
+      background: linear-gradient(135deg, var(--gold), var(--green-400));
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-en); font-weight: 700; font-size: .8rem;
+      color: var(--green-900);
+    }
+    .nav__logo-text {
+      font-family: var(--font-en); font-weight: 600; font-size: .95rem;
+      color: var(--white);
+    }
+    .nav__logo-text span { color: var(--gold-lt); }
+    .nav__back {
+      margin-left: auto;
+      font-size: .82rem; color: rgba(255,255,255,.55);
+      text-decoration: none; transition: color .2s;
+    }
+    .nav__back:hover { color: var(--white); }
+
+    .nav__auth { display: flex; align-items: center; gap: .75rem; }
+    .nav__auth-link {
+      font-size: .82rem; font-weight: 600; color: rgba(255,255,255,.65);
+      background: none; border: none; font-family: inherit; cursor: pointer;
+      text-decoration: none; transition: color .2s;
+    }
+    .nav__auth-link:hover { color: var(--white); }
+    .nav__auth-cta {
+      background: var(--gold); color: var(--green-900);
+      border-radius: 6px; padding: .4rem .9rem;
+      font-size: .82rem; font-weight: 700; text-decoration: none;
+      transition: opacity .2s;
+    }
+    .nav__auth-cta:hover { opacity: .85; }
+    .nav__auth-email {
+      font-size: .8rem; color: rgba(255,255,255,.6);
+      max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .nav__auth-logout {
+      background: none; border: 1px solid rgba(255,255,255,.3); color: var(--white);
+      border-radius: 6px; padding: .35rem .8rem; font-size: .8rem; font-weight: 700;
+      font-family: inherit; cursor: pointer; transition: border-color .2s;
+    }
+    .nav__auth-logout:hover { border-color: var(--white); }
+
+    /* HERO */
+    .pp-hero {
+      background: linear-gradient(135deg, var(--green-900), var(--green-700));
+      padding: 60px 1.5rem 50px;
+      text-align: center;
+    }
+    .pp-hero__badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(201,168,76,.12);
+      border: 1px solid rgba(201,168,76,.25);
+      border-radius: 999px; padding: .3rem .9rem;
+      font-size: .75rem; font-weight: 500; letter-spacing: .1em;
+      color: var(--gold-lt); text-transform: uppercase;
+      font-family: var(--font-en);
+      margin-bottom: 1.2rem;
+    }
+    .pp-hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700; color: var(--white);
+      line-height: 1.25; letter-spacing: -.02em;
+      margin-bottom: .8rem;
+    }
+    .pp-hero__meta { font-size: .85rem; color: rgba(255,255,255,.5); }
+    .pp-hero__meta span { color: rgba(255,255,255,.7); font-weight: 500; }
+
+    /* CONTENT */
+    .pp-content {
+      max-width: 780px; margin: 0 auto;
+      padding: 60px 1.5rem 80px;
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-100);
+      border-radius: 14px;
+      padding: 1.5rem 1.8rem;
+      margin-bottom: 3rem;
+    }
+    .toc h2 {
+      font-size: .82rem; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--green-600);
+      font-family: var(--font-en); margin-bottom: 1rem;
+    }
+    .toc ol {
+      list-style: none; counter-reset: toc-counter;
+      display: grid; grid-template-columns: 1fr 1fr; gap: .35rem .5rem;
+    }
+    .toc li { counter-increment: toc-counter; }
+    .toc a {
+      font-size: .85rem; color: var(--gray-700); text-decoration: none;
+      display: flex; align-items: center; gap: .4rem;
+      transition: color .2s;
+    }
+    .toc a::before {
+      content: counter(toc-counter, decimal-leading-zero);
+      font-size: .72rem; font-family: var(--font-en);
+      color: var(--green-400); font-weight: 600; min-width: 22px;
+    }
+    .toc a:hover { color: var(--green-600); }
+
+    /* ARTICLE SECTIONS */
+    .pp-section {
+      margin-bottom: 3rem;
+      scroll-margin-top: 80px;
+    }
+    .pp-section__header {
+      display: flex; align-items: center; gap: .8rem;
+      margin-bottom: 1.2rem; padding-bottom: .8rem;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .pp-section__num {
+      width: 28px; height: 28px; flex-shrink: 0;
+      background: var(--green-700);
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .72rem; font-weight: 700; color: var(--white);
+      font-family: var(--font-en);
+    }
+    .pp-section h2 {
+      font-size: 1.15rem; font-weight: 700; color: var(--ink);
+    }
+    .pp-section p, .pp-section li {
+      font-size: .94rem; color: var(--gray-700); line-height: 1.85;
+    }
+    .pp-section ul, .pp-section ol {
+      padding-left: 1.2rem; margin: .6rem 0;
+    }
+    .pp-section li { margin-bottom: .3rem; }
+    .pp-section strong { color: var(--ink); }
+
+    /* HIGHLIGHT BOX */
+    .highlight-box {
+      background: var(--green-100);
+      border-left: 3px solid var(--green-600);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.2rem;
+      margin: 1rem 0;
+      font-size: .9rem; color: var(--green-700); line-height: 1.7;
+    }
+
+    /* CONTACT CARD */
+    .contact-card {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 14px;
+      padding: 1.5rem;
+      display: flex; flex-direction: column; gap: .5rem;
+    }
+    .contact-card__row {
+      display: flex; gap: .8rem; align-items: baseline;
+      font-size: .9rem;
+    }
+    .contact-card__label {
+      font-weight: 600; color: var(--ink);
+      min-width: 90px; font-size: .82rem;
+    }
+    .contact-card__value { color: var(--gray-700); }
+    .contact-card__value a { color: var(--green-600); text-decoration: none; }
+    .contact-card__value a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .toc ol { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <div class="nav__logo-mark">GK</div>
+        <span class="nav__logo-text">Golden<span>KP</span></span>
+      </a>
+      <a href="../index.html" class="nav__back">← GoldenKP 홈으로</a>
+      <div id="nav-auth" class="nav__auth">
+        <a href="market-login.html" class="nav__auth-link">로그인</a>
+        <a href="market-signup.html" class="nav__auth-cta">회원가입</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="pp-hero">
+    <div class="pp-hero__badge">Terms of Service · 이용약관</div>
+    <h1>GoldenKP<br>이용약관</h1>
+    <p class="pp-hero__meta">
+      시행일: <span>2026년 7월 1일</span> &nbsp;·&nbsp; 운영자: <span>GoldenKP / 함광근</span>
+    </p>
+  </div>
+
+  <div class="pp-content">
+
+    <!-- TOC -->
+    <div class="toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#s1">목적 및 약관의 효력</a></li>
+        <li><a href="#s2">회원가입 및 계정 관리</a></li>
+        <li><a href="#s3">서비스의 제공 및 변경</a></li>
+        <li><a href="#s4">리포트 구매 및 환불 규정</a></li>
+        <li><a href="#s5">쇼핑몰 이용 안내</a></li>
+        <li><a href="#s6">동네정보 앱 이용</a></li>
+        <li><a href="#s7">이용자의 의무 및 금지행위</a></li>
+        <li><a href="#s8">면책조항</a></li>
+        <li><a href="#s9">약관의 변경</a></li>
+      </ol>
+    </div>
+
+    <!-- 개요 -->
+    <div class="highlight-box">
+      본 약관은 GoldenKP(이하 "운영자")가 제공하는 웹사이트(goldenkp.com) 및 관련 서비스(시장동향 리포트, 건강기능식품 쇼핑몰, 동네정보 앱 등) 이용과 관련하여 운영자와 이용자 간의 권리·의무 및 책임사항을 규정합니다.
+      개인정보 처리에 관한 사항은 <a href="privacy.html" style="color:var(--green-600);">GoldenKP 개인정보처리방침</a>(동네정보 앱은 <a href="privacy-policy.html" style="color:var(--green-600);">동네정보 앱 개인정보처리방침</a>)을 따릅니다.
+    </div>
+
+    <!-- 1 -->
+    <div class="pp-section" id="s1">
+      <div class="pp-section__header">
+        <div class="pp-section__num">01</div>
+        <h2>목적 및 약관의 효력</h2>
+      </div>
+      <p>본 약관은 이용자가 GoldenKP가 제공하는 서비스를 이용함에 있어 필요한 사항을 정함을 목적으로 합니다.</p>
+      <p>이용자는 서비스 이용 시 본 약관에 동의한 것으로 간주되며, 운영자는 약관의 내용을 이용자가 확인할 수 있도록 웹사이트에 게시합니다.</p>
+    </div>
+
+    <!-- 2 -->
+    <div class="pp-section" id="s2">
+      <div class="pp-section__header">
+        <div class="pp-section__num">02</div>
+        <h2>회원가입 및 계정 관리</h2>
+      </div>
+      <ul>
+        <li>이용자는 이메일과 비밀번호를 입력하여 회원가입을 신청하며, 운영자의 승인으로 회원가입이 완료됩니다.</li>
+        <li>이용자는 본인의 실명 및 실제 정보만을 이용하여 회원가입을 신청해야 합니다.</li>
+        <li>계정 정보(이메일·비밀번호)의 관리 책임은 이용자 본인에게 있으며, 제3자에게 양도·대여할 수 없습니다.</li>
+        <li>허위 정보 기재, 타인 명의 도용 등이 확인될 경우 운영자는 회원가입을 거부하거나 이용을 제한할 수 있습니다.</li>
+      </ul>
+    </div>
+
+    <!-- 3 -->
+    <div class="pp-section" id="s3">
+      <div class="pp-section__header">
+        <div class="pp-section__num">03</div>
+        <h2>서비스의 제공 및 변경</h2>
+      </div>
+      <p>운영자는 안정적인 서비스 제공을 위해 노력하며, 서비스의 내용·운영상 또는 기술상 필요에 따라 제공 중인 서비스를 변경하거나 중단할 수 있습니다. 이 경우 사전에 공지사항을 통해 안내합니다.</p>
+      <p>다만, 시스템 점검, 천재지변 등 불가피한 사유로 사전 공지가 어려운 경우 사후에 통지할 수 있습니다.</p>
+    </div>
+
+    <!-- 4 -->
+    <div class="pp-section" id="s4">
+      <div class="pp-section__header">
+        <div class="pp-section__num">04</div>
+        <h2>리포트 구매 및 환불 규정</h2>
+      </div>
+      <p>시장동향 리포트는 계좌이체 방식으로 결제하며, 입금 확인 후 영업일 기준 1일 이내에 PDF 파일을 이메일로 발송합니다.</p>
+      <ul>
+        <li><strong>환불:</strong> 디지털 콘텐츠 특성상 파일 발송 완료 후에는 환불이 어렵습니다. 구매 전 맛보기 샘플을 확인해 주시기 바랍니다.</li>
+        <li><strong>재발송:</strong> 파일 오류나 미수신 시에는 즉시 재발송해 드립니다.</li>
+        <li><strong>이용 범위:</strong> 구매한 리포트는 구매자 1인 또는 1개 법인의 내부 업무용으로만 사용 가능하며, 외부 배포·재판매·무단 공유는 금지됩니다.</li>
+      </ul>
+    </div>
+
+    <!-- 5 -->
+    <div class="pp-section" id="s5">
+      <div class="pp-section__header">
+        <div class="pp-section__num">05</div>
+        <h2>쇼핑몰 이용 안내</h2>
+      </div>
+      <p>건강기능식품 쇼핑몰은 현재 상품 정보 제공 단계이며, 주문·결제·배송 기능은 제공되지 않습니다. 실제 주문·결제 기능이 도입되면 관련 약관 조항을 반영하여 사전 안내합니다.</p>
+    </div>
+
+    <!-- 6 -->
+    <div class="pp-section" id="s6">
+      <div class="pp-section__header">
+        <div class="pp-section__num">06</div>
+        <h2>동네정보 앱 이용</h2>
+      </div>
+      <p>동네정보 앱은 무료로 제공되며, 위치 기반 주변 장소 검색 기능 이용을 위해 위치 정보 접근 권한 동의가 필요합니다. 앱 이용과 관련한 개인정보 처리는 별도의 동네정보 앱 개인정보처리방침을 따릅니다.</p>
+    </div>
+
+    <!-- 7 -->
+    <div class="pp-section" id="s7">
+      <div class="pp-section__header">
+        <div class="pp-section__num">07</div>
+        <h2>이용자의 의무 및 금지행위</h2>
+      </div>
+      <p>이용자는 서비스 이용 시 다음 행위를 하여서는 안 됩니다.</p>
+      <ul>
+        <li>타인의 계정 정보를 도용하거나 부정하게 사용하는 행위</li>
+        <li>운영자가 제공하는 콘텐츠(리포트 등)를 무단으로 복제·배포·재판매하는 행위</li>
+        <li>서비스의 안정적 운영을 방해하는 행위</li>
+        <li>관계 법령 및 공서양속에 반하는 행위</li>
+      </ul>
+    </div>
+
+    <!-- 8 -->
+    <div class="pp-section" id="s8">
+      <div class="pp-section__header">
+        <div class="pp-section__num">08</div>
+        <h2>면책조항</h2>
+      </div>
+      <p>운영자는 천재지변, 시스템 장애 등 불가항력적인 사유로 서비스를 제공할 수 없는 경우 책임이 면제됩니다.</p>
+      <p>운영자는 이용자가 서비스를 이용하여 기대하는 효과를 얻지 못한 것에 대해 책임을 지지 않으며, 이용자의 귀책사유로 인한 서비스 이용 장애에 대해서도 책임을 지지 않습니다.</p>
+    </div>
+
+    <!-- 9 -->
+    <div class="pp-section" id="s9">
+      <div class="pp-section__header">
+        <div class="pp-section__num">09</div>
+        <h2>약관의 변경</h2>
+      </div>
+      <p>운영자는 관계 법령을 위배하지 않는 범위에서 본 약관을 변경할 수 있으며, 변경 시 적용일자 및 변경사유를 명시하여 웹사이트를 통해 사전 공지합니다.</p>
+      <ul>
+        <li>현행 약관 시행일: 2026년 7월 1일</li>
+        <li>변경 이력: 최초 작성</li>
+      </ul>
+      <div class="contact-card" style="margin-top:1.5rem;">
+        <div class="contact-card__row">
+          <span class="contact-card__label">문의</span>
+          <span class="contact-card__value"><a href="mailto:signal386@empas.com">signal386@empas.com</a></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__brand">
+          <a href="../index.html" class="nav__logo" style="margin-bottom:var(--space-md);">
+            <img src="../img/gk_logo.png" alt="GoldenKP 로고" class="nav__logo-mark nav__logo-img">
+            <span class="nav__logo-text">Golden<span>KP</span></span>
+          </a>
+          <p>지식과 기술로 새로운 가치를 만드는 1인 지식기업.<br>
+          eSPORTS · 건강기능식품 · 동네마켓서비스 · 시장조사 리포트</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>사업분야</h4>
+          <ul>
+            <li><a href="business.html">eSPORTS 협력사업</a></li>
+            <li><a href="shop.html">건강기능식품 쇼핑몰</a></li>
+            <li><a href="dongne.html">동네마켓서비스</a></li>
+            <li><a href="market_rs.html">시장조사 리포트</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>정보</h4>
+          <ul>
+            <li><a href="privacy.html">개인정보처리방침</a></li>
+            <li><a href="mailto:signal386@empas.com">이메일 문의</a></li>
+            <li><a href="https://goldenkp.com">goldenkp.com</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__legal">
+        <div class="footer__policies">
+          <a href="terms.html">이용약관</a>
+          <a href="privacy.html">개인정보처리방침</a>
+        </div>
+        <!-- 사업 개시 전까지 비공개: 오픈 시 아래 "footer__company-info--pending" 클래스와 안내 문구(footer__pending-note)를 제거하세요 -->
+        <div class="footer__company-info footer__company-info--pending">
+          <span>상호명: 골든케이피 크리에티브랩</span>
+          <span>대표자: 함광근</span>
+          <span>사업자등록번호: 233-21-02210</span>
+          <span>주소: 서울특별시 강동구 고덕로16길 44-9, 3층 301호 (암사동)</span><br>
+          <span>대표번호: </span>
+          <span>통신판매업신고번호: 제2023-서울강동-2521호</span>
+        </div>
+        <p class="footer__pending-note">※ 사업자 정보는 사업 개시 후 공개됩니다.</p>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2026 GoldenKP / 함광근. All rights reserved.</span>
+        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--clr-text-3);">
+          문의: signal386@empas.com
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/auth.js"></script>
+  <script>updateNav();</script>
+</body>
+</html>

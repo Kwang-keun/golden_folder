@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="동네정보 앱 — GPS 기반 주변 병원·약국·도서관·공공기관 검색. Google Play 출시예정.">
+  <title>동네정보 앱 — GoldenKP</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════
+       NAVIGATION
+  ══════════════════════════════ -->
+  <nav class="nav" role="navigation" aria-label="메인 네비게이션">
+    <div class="nav__inner">
+
+      <a href="../index.html" class="nav__logo" aria-label="GoldenKP 홈">
+        <img src="../img/gk_logo.png" alt="GoldenKP 로고" class="nav__logo-mark nav__logo-img">
+        <span class="nav__logo-text">Golden<span>KP</span></span>
+      </a>
+
+      <ul class="nav__links" role="list">
+        <li><a href="about.html">회사 소개</a></li>
+        <li class="nav__dropdown">
+          <button class="nav__dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">사업분야</button>
+          <ul class="nav__dropdown-menu" role="list">
+            <li><a href="business.html">eSPORTS 협력사업</a></li>
+            <li><a href="shop.html">건강기능식품 쇼핑몰</a></li>
+            <li><a href="dongne.html">동네마켓서비스</a></li>
+            <li><a href="market_rs.html">시장조사 리포트</a></li>
+          </ul>
+        </li>
+        <li><a href="notice.html">공지사항</a></li>
+      </ul>
+
+      <div class="nav__cta">
+        <a href="../index.html" class="btn btn-primary">
+          ← 홈으로
+        </a>
+      </div>
+
+      <div id="nav-auth" class="nav__auth">
+        <a href="market-login.html" class="nav__auth-link">로그인</a>
+        <a href="market-signup.html" class="nav__auth-cta">회원가입</a>
+      </div>
+
+      <button class="mobile-menu-btn" aria-label="메뉴 열기" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </nav>
+
+
+  <!-- ══════════════════════════════
+       PAGE HEADER
+  ══════════════════════════════ -->
+  <header class="hero" id="hero" role="banner" style="min-height:50vh;">
+    <div class="hero__bg"></div>
+    <div class="hero__grid-lines"></div>
+
+    <div class="container">
+      <div class="hero__content">
+
+        <div class="hero__text">
+          <div class="hero__eyebrow">
+            <div class="hero__eyebrow-line"></div>
+            <span class="section-label">App · Flutter · Android</span>
+          </div>
+
+          <h1 class="display-xl hero__title">
+            🏘️ 동네정보 앱
+          </h1>
+
+          <p class="hero__desc">
+            현재 위치 기반으로 주변 병원·약국·도서관·공공기관을 한눈에. GPS가 알려주는 내 동네 생활 정보.
+          </p>
+
+          <div class="hero__actions">
+            <span class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2rem;opacity:0.7;cursor:default;">
+              📱 Google Play 출시예정
+            </span>
+            <a href="privacy-policy.html" class="btn btn-ghost">
+              개인정보처리방침
+            </a>
+          </div>
+
+          <div class="hero__stats">
+            <div>
+              <div class="hero__stat-value">2km</div>
+              <div class="hero__stat-label">검색 반경</div>
+            </div>
+            <div>
+              <div class="hero__stat-value">4종</div>
+              <div class="hero__stat-label">장소 카테고리</div>
+            </div>
+            <div>
+              <div class="hero__stat-value">무료</div>
+              <div class="hero__stat-label">앱 가격</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__orb">
+            <div class="hero__molecule">
+              <span class="molecule-text" style="font-size:2rem;">🏘️</span>
+            </div>
+          </div>
+
+          <div class="hero__float-card">
+            <div class="float-card__label">플랫폼</div>
+            <div class="float-card__value">Android</div>
+            <div class="float-card__sub">📱 Flutter 개발</div>
+          </div>
+
+          <div class="hero__float-card">
+            <div class="float-card__label">API</div>
+            <div class="float-card__value">카카오</div>
+            <div class="float-card__sub">📍 장소 검색 API</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ══════════════════════════════
+       APP FEATURES
+  ══════════════════════════════ -->
+  <section class="vitamins-section section" id="features" aria-labelledby="features-title">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-label">App Features</span>
+        <h2 class="section-title" id="features-title">주요 기능</h2>
+        <p>GPS 하나로 내 주변의 모든 생활 편의시설을 빠르게 찾습니다.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:var(--space-lg);margin-top:var(--space-2xl);">
+
+        <div class="vitamin-card reveal reveal-delay-1">
+          <div class="vitamin-card__letter">📍</div>
+          <div class="vitamin-card__name">GPS 기반 검색</div>
+          <div class="vitamin-card__aka">반경 2km 이내</div>
+          <div class="vitamin-card__benefits">
+            <div class="benefit-item"><div class="benefit-dot"></div>현재 위치 자동 감지</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>반경 2km 내 장소 목록</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>거리순 정렬</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>지도 연동</div>
+          </div>
+        </div>
+
+        <div class="vitamin-card reveal reveal-delay-2">
+          <div class="vitamin-card__letter">🏥</div>
+          <div class="vitamin-card__name">병원 · 약국</div>
+          <div class="vitamin-card__aka">의료 시설</div>
+          <div class="vitamin-card__benefits">
+            <div class="benefit-item"><div class="benefit-dot"></div>내과·외과·치과·한의원</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>24시간 약국 표시</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>전화 연결 바로가기</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>카카오맵 연동</div>
+          </div>
+        </div>
+
+        <div class="vitamin-card reveal reveal-delay-3">
+          <div class="vitamin-card__letter">📚</div>
+          <div class="vitamin-card__name">도서관 · 공공기관</div>
+          <div class="vitamin-card__aka">공공 편의시설</div>
+          <div class="vitamin-card__benefits">
+            <div class="benefit-item"><div class="benefit-dot"></div>공립·사립 도서관</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>주민센터·구청</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>공공데이터포털 연동</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>data.go.kr API 활용</div>
+          </div>
+        </div>
+
+        <div class="vitamin-card reveal reveal-delay-4">
+          <div class="vitamin-card__letter">🔌</div>
+          <div class="vitamin-card__name">기술 스택</div>
+          <div class="vitamin-card__aka">Tech Stack</div>
+          <div class="vitamin-card__benefits">
+            <div class="benefit-item"><div class="benefit-dot"></div>Flutter (Dart)</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>카카오 장소 검색 API</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>공공데이터포털 API</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>Android (Google Play)</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════
+       SCREENSHOT PLACEHOLDER
+  ══════════════════════════════ -->
+  <section class="section" id="screenshots" aria-labelledby="screenshots-title">
+    <div class="container">
+
+      <div class="section-header section-header--center reveal">
+        <span class="section-label">App Screenshots</span>
+        <h2 class="section-title" id="screenshots-title">앱 화면</h2>
+        <p>출시 전 스크린샷 공개 예정.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--space-lg);margin-top:var(--space-2xl);max-width:900px;margin-left:auto;margin-right:auto;">
+
+        <div class="reveal reveal-delay-1" style="
+          background:var(--clr-surface);
+          border:1px solid var(--clr-border);
+          border-radius:var(--radius-lg);
+          aspect-ratio:9/16;
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          justify-content:center;
+          gap:var(--space-md);
+          color:var(--clr-text-3);
+        ">
+          <i class="fa-solid fa-mobile-screen" style="font-size:2.5rem;"></i>
+          <span style="font-size:0.85rem;font-family:var(--font-mono);">홈 화면</span>
+        </div>
+
+        <div class="reveal reveal-delay-2" style="
+          background:var(--clr-surface);
+          border:1px solid var(--clr-border);
+          border-radius:var(--radius-lg);
+          aspect-ratio:9/16;
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          justify-content:center;
+          gap:var(--space-md);
+          color:var(--clr-text-3);
+        ">
+          <i class="fa-solid fa-map-location-dot" style="font-size:2.5rem;"></i>
+          <span style="font-size:0.85rem;font-family:var(--font-mono);">검색 결과</span>
+        </div>
+
+        <div class="reveal reveal-delay-3" style="
+          background:var(--clr-surface);
+          border:1px solid var(--clr-border);
+          border-radius:var(--radius-lg);
+          aspect-ratio:9/16;
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          justify-content:center;
+          gap:var(--space-md);
+          color:var(--clr-text-3);
+        ">
+          <i class="fa-solid fa-hospital" style="font-size:2.5rem;"></i>
+          <span style="font-size:0.85rem;font-family:var(--font-mono);">장소 상세</span>
+        </div>
+
+      </div>
+
+      <div style="text-align:center;margin-top:var(--space-2xl);">
+        <p style="color:var(--clr-text-3);font-size:0.9rem;font-family:var(--font-mono);">
+          스크린샷은 출시 전 업데이트 예정입니다
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════
+       PRIVACY / CTA
+  ══════════════════════════════ -->
+  <section class="newsletter-section" id="cta">
+    <div class="container">
+      <div class="newsletter-inner reveal">
+        <span class="section-label" style="display:block;margin-bottom:var(--space-md);">출시 알림</span>
+        <h2 class="section-title">Google Play<br><em>출시예정</em></h2>
+        <p>동네정보 앱이 곧 Google Play에 출시됩니다. 앱 관련 개인정보처리방침을 미리 확인하세요.</p>
+        <div style="margin-top:var(--space-xl);display:flex;gap:var(--space-md);flex-wrap:wrap;justify-content:center;">
+          <a href="privacy-policy.html" class="btn btn-outline" style="font-size:1rem;padding:0.85rem 2rem;">
+            개인정보처리방침 확인
+          </a>
+          <a href="business.html" class="btn btn-ghost">
+            GoldenKP 사업분야 →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════
+       FOOTER
+  ══════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__brand">
+          <a href="../index.html" class="nav__logo" style="margin-bottom:var(--space-md);">
+            <img src="../img/gk_logo.png" alt="GoldenKP 로고" class="nav__logo-mark nav__logo-img">
+            <span class="nav__logo-text">Golden<span>KP</span></span>
+          </a>
+          <p>지식과 기술로 새로운 가치를 만드는 1인 지식기업.<br>
+          eSPORTS · 건강기능식품 · 동네마켓서비스 · 시장조사 리포트</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>사업분야</h4>
+          <ul>
+            <li><a href="business.html">eSPORTS 협력사업</a></li>
+            <li><a href="shop.html">건강기능식품 쇼핑몰</a></li>
+            <li><a href="dongne.html">동네마켓서비스</a></li>
+            <li><a href="market_rs.html">시장조사 리포트</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>정보</h4>
+          <ul>
+            <li><a href="privacy-policy.html">개인정보처리방침</a></li>
+            <li><a href="mailto:signal386@empas.com">이메일 문의</a></li>
+            <li><a href="https://goldenkp.com">goldenkp.com</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__legal">
+        <div class="footer__policies">
+          <a href="terms.html">이용약관</a>
+          <a href="privacy-policy.html">개인정보처리방침</a>
+        </div>
+        <!-- 사업 개시 전까지 비공개: 오픈 시 아래 "footer__company-info--pending" 클래스와 안내 문구(footer__pending-note)를 제거하세요 -->
+        <div class="footer__company-info footer__company-info--pending">
+          <span>상호명: 골든케이피 크리에티브랩</span>
+          <span>대표자: 함광근</span>
+          <span>사업자등록번호: 233-21-02210</span>
+          <span>주소: 서울특별시 강동구 고덕로16길 44-9, 3층 301호 (암사동)</span><br>
+          <span>대표번호: </span>
+          <span>통신판매업신고번호: 제2023-서울강동-2521호</span>
+        </div>
+        <p class="footer__pending-note">※ 사업자 정보는 사업 개시 후 공개됩니다.</p>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2026 GoldenKP / 함광근. All rights reserved.</span>
+        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--clr-text-3);">
+          문의: signal386@empas.com
+        </span>
+      </div>
+    </div>
+  </footer>
+
+
+  <style>
+    .sr-only {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+  </style>
+
+  <script src="../js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/auth.js"></script>
+  <script>updateNav();</script>
+</body>
+</html>

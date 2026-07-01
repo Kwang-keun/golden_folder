@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoldenKP 시장동향 리포트 | 전문 시장 분석 서비스</title>
+  <meta name="description" content="GoldenKP가 제공하는 전문 시장동향 분석 리포트. 경기북부 e스포츠, 건강기능식품, 의료기기 시장을 심층 분석합니다." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/market-report.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <img src="../img/gk_logo.png" alt="GoldenKP 로고" class="nav__logo-mark nav__logo-img">
+    <span class="nav-logo-text">Golden<span>KP</span></span>
+  </a>
+  <ul class="nav__links" role="list">
+    <li><a href="about.html">회사 소개</a></li>
+    <li class="nav__dropdown">
+      <button class="nav__dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">사업분야</button>
+      <ul class="nav__dropdown-menu" role="list">
+        <li><a href="business.html">eSPORTS 협력사업</a></li>
+        <li><a href="shop.html">건강기능식품 쇼핑몰</a></li>
+        <li><a href="dongne.html">동네마켓서비스</a></li>
+        <li><a href="market_rs.html">시장조사 리포트</a></li>
+      </ul>
+    </li>
+    <li><a href="notice.html">공지사항</a></li>
+  </ul>
+  <div class="nav__cta">
+    <a href="../index.html" class="btn btn-primary" style="padding:10px 24px;font-size:14px;border-radius:9999px;">← 홈으로</a>
+  </div>
+  <div id="nav-auth" class="nav__auth">
+    <a href="market-login.html" class="nav__auth-link">로그인</a>
+    <a href="market-signup.html" class="nav__auth-cta">회원가입</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-badge">2025 최신 발행 리포트</div>
+  <h1>데이터로 읽는<br/><span class="accent">시장의 흐름</span></h1>
+  <p class="hero-sub">
+    GoldenKP가 직접 수집·분석한 전문 시장동향 리포트.<br/>
+    의사결정에 필요한 핵심 인사이트를 제공합니다.
+  </p>
+  <div class="hero-actions">
+    <button class="btn-primary" onclick="document.getElementById('reports').scrollIntoView({behavior:'smooth'})">리포트 보기</button>
+    <button class="btn-outline" onclick="openSampleModal()">맛보기 샘플 ›</button>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">1+</div><div class="stat-label">발행 리포트</div></div>
+    <div class="stat"><div class="stat-num">100p+</div><div class="stat-label">평균 분량</div></div>
+    <div class="stat"><div class="stat-num">2025</div><div class="stat-label">최신 데이터</div></div>
+  </div>
+</section>
+
+<!-- REPORTS -->
+<section class="section" id="reports">
+  <div class="section-header scroll-reveal">
+    <div class="section-eyebrow">Reports</div>
+    <h2 class="section-title">시장동향 리포트</h2>
+    <p class="section-desc">검증된 데이터 기반의 심층 분석 리포트를 만나보세요.</p>
+  </div>
+
+  <div class="cards-grid">
+
+    <!-- CARD 1: Active -->
+    <div class="card card-active scroll-reveal">
+      <div class="card-ribbon">판매중</div>
+      <div class="card-header">
+        <div class="card-icon">🎮</div>
+        <div class="card-title">경기북부 e스포츠<br/>시장동향 분석 2025</div>
+        <div class="card-meta">
+          <span class="tag">2025년 발행</span>
+          <span class="tag tag-mint">PDF 리포트</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-desc">
+          경기북부 지역 e스포츠 생태계를 심층 분석한 전문 리포트.
+          인프라 현황부터 시장 성장 전망까지 의사결정에 필요한 핵심 데이터를 제공합니다.
+        </p>
+        <ul class="card-contents">
+          <li>경기북부 e스포츠 인프라 현황 및 지역별 분포</li>
+          <li>시장 규모 및 성장률 분석 (2022~2025)</li>
+          <li>주요 플레이어 및 경쟁 구도 분석</li>
+          <li>정책·지원 환경 및 투자 유치 동향</li>
+          <li>2026년 시장 전망 및 전략적 시사점</li>
+        </ul>
+        <div class="card-price">
+          <span class="price-amount">₩198,000</span>
+          <span class="price-unit">VAT 포함</span>
+        </div>
+        <div class="card-actions">
+          <button class="btn-card-buy" onclick="openBuyModal('경기북부 e스포츠 시장동향 분석 2025', '198,000')">
+            구매하기
+          </button>
+          <button class="btn-card-sample" onclick="openSampleModal()">
+            맛보기 샘플 보기
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2: Coming Soon -->
+    <div class="card scroll-reveal" style="transition-delay:.1s">
+      <div class="card-ribbon card-ribbon-soon">준비중</div>
+      <div class="card-header" style="opacity:.7">
+        <div class="card-icon">💊</div>
+        <div class="card-title">건강기능식품<br/>유통 동향</div>
+        <div class="card-meta">
+          <span class="tag">2025년 예정</span>
+          <span class="tag">PDF 리포트</span>
+        </div>
+      </div>
+      <div class="card-body soon-overlay">
+        <p class="card-desc">
+          급성장하는 국내 건강기능식품 유통 시장의 채널별 동향,
+          소비자 트렌드, 주요 브랜드 현황을 분석합니다.
+        </p>
+        <ul class="card-contents">
+          <li>온·오프라인 채널별 유통 현황</li>
+          <li>주요 카테고리별 시장 규모</li>
+          <li>소비자 구매 패턴 및 트렌드 분석</li>
+          <li>수입·수출 동향 및 글로벌 비교</li>
+          <li>향후 시장 성장 전망</li>
+        </ul>
+        <div class="card-price">
+          <span class="price-amount" style="color:var(--gray-400)">₩TBD</span>
+        </div>
+        <div class="card-actions">
+          <span class="soon-badge">⏳ 출시 준비 중입니다</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3: Coming Soon -->
+    <div class="card scroll-reveal" style="transition-delay:.2s">
+      <div class="card-ribbon card-ribbon-soon">준비중</div>
+      <div class="card-header" style="opacity:.7">
+        <div class="card-icon">🏥</div>
+        <div class="card-title">CPR패드<br/>수입동향</div>
+        <div class="card-meta">
+          <span class="tag">2025년 예정</span>
+          <span class="tag">PDF 리포트</span>
+        </div>
+      </div>
+      <div class="card-body soon-overlay">
+        <p class="card-desc">
+          국내 CPR패드(제세동기 전극패드) 수입 현황과 주요 수입국,
+          가격 동향, 의료기기 인증 환경을 분석합니다.
+        </p>
+        <ul class="card-contents">
+          <li>국내 CPR패드 수입량·금액 연도별 추이</li>
+          <li>국가별 수입 비중 및 주요 공급업체</li>
+          <li>가격 동향 및 환율 영향 분석</li>
+          <li>의료기기 허가·규제 환경</li>
+          <li>시장 진입 기회 및 리스크 분석</li>
+        </ul>
+        <div class="card-price">
+          <span class="price-amount" style="color:var(--gray-400)">₩TBD</span>
+        </div>
+        <div class="card-actions">
+          <span class="soon-badge">⏳ 출시 준비 중입니다</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SAMPLE PREVIEW BANNER -->
+<section class="sample-section" id="sample">
+  <div class="section-eyebrow" style="color:var(--mint-400)">Sample Preview</div>
+  <h2 class="section-title">구매 전 직접 확인하세요</h2>
+  <p class="section-desc" style="color:rgba(255,255,255,.6); margin-top:12px;">
+    리포트의 주요 구성과 샘플 데이터를 무료로 확인할 수 있습니다.
+  </p>
+
+  <div class="sample-preview">
+    <div class="sample-item" onclick="openSampleModal()">
+      <div class="sample-item-icon">📊</div>
+      <div class="sample-item-title">시장 규모 분석</div>
+      <div class="sample-item-sub">연도별 시장 성장 추이</div>
+    </div>
+    <div class="sample-item" onclick="openSampleModal()">
+      <div class="sample-item-icon">🗺️</div>
+      <div class="sample-item-title">지역 분포 현황</div>
+      <div class="sample-item-sub">경기북부 인프라 맵</div>
+    </div>
+    <div class="sample-item" onclick="openSampleModal()">
+      <div class="sample-item-icon">📋</div>
+      <div class="sample-item-title">목차 전체 공개</div>
+      <div class="sample-item-sub">챕터별 구성 확인</div>
+    </div>
+    <div class="sample-item" onclick="openSampleModal()">
+      <div class="sample-item-icon">💡</div>
+      <div class="sample-item-title">핵심 인사이트</div>
+      <div class="sample-item-sub">주요 시사점 미리보기</div>
+    </div>
+  </div>
+
+  <button class="btn-sample-big" onclick="openSampleModal()">맛보기 샘플 열기 →</button>
+</section>
+
+<!-- HOW TO BUY -->
+<section class="section section-alt" id="buy">
+  <div class="section-header scroll-reveal">
+    <div class="section-eyebrow">How to Buy</div>
+    <h2 class="section-title">구매 안내</h2>
+    <p class="section-desc">간단한 4단계로 리포트를 받으실 수 있습니다.</p>
+  </div>
+
+  <div class="steps">
+    <div class="step scroll-reveal">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>리포트 선택</h3>
+        <p>원하시는 리포트 카드의 <strong>구매하기</strong> 버튼을 클릭하여 상품명과 금액을 확인합니다.</p>
+      </div>
+    </div>
+    <div class="step scroll-reveal">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>계좌이체</h3>
+        <p>아래 계좌로 리포트 금액을 이체해 주세요. 입금자명은 <strong>이메일 앞 아이디</strong>로 입력해 주시면 확인이 빠릅니다.</p>
+        <div class="account-box">
+          <div class="account-row">
+            <span class="account-label">은행</span>
+            <span class="account-value">카카오뱅크</span>
+          </div>
+          <div class="account-row">
+            <span class="account-label">계좌번호</span>
+            <span class="account-value highlight">3333-XXXX-XXXX</span>
+          </div>
+          <div class="account-row">
+            <span class="account-label">예금주</span>
+            <span class="account-value">골든케이피 (주)</span>
+          </div>
+        </div>
+        <p style="font-size:12px; color:var(--gray-400); margin-top:10px;">
+          ※ 계좌번호는 구매 문의 이메일로 최종 확인해 주세요.
+        </p>
+      </div>
+    </div>
+    <div class="step scroll-reveal">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>이메일 발송</h3>
+        <p>이체 완료 후 아래 이메일로 다음 내용을 보내주세요.</p>
+        <div class="contact-box">
+          📧 <a href="mailto:report@goldenkp.com">report@goldenkp.com</a>
+          <div style="margin-top:10px; font-size:13px; color:var(--gray-600); line-height:1.8;">
+            · 구매하신 리포트명<br/>
+            · 입금자명 및 입금 금액<br/>
+            · 리포트 수령 이메일 주소
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="step scroll-reveal">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h3>리포트 수령</h3>
+        <p>입금 확인 후 <strong>영업일 기준 1일 이내</strong>에 PDF 파일을 이메일로 발송해 드립니다. 스팸함도 확인해 주세요.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="section-header scroll-reveal">
+    <div class="section-eyebrow">FAQ</div>
+    <h2 class="section-title">자주 묻는 질문</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        리포트는 어떤 형식으로 제공되나요?
+        <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">PDF 파일 형식으로 제공됩니다. 구매 확인 후 이메일로 발송되며, 별도 설치 프로그램 없이 모든 기기에서 열람 가능합니다.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        환불이 가능한가요?
+        <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">디지털 콘텐츠 특성상 파일 발송 후에는 환불이 어렵습니다. 구매 전 맛보기 샘플을 충분히 확인해 주시기 바랍니다. 파일 오류나 미수신 시에는 즉시 재발송해 드립니다.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        법인 구매 및 세금계산서 발행이 가능한가요?
+        <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">네, 가능합니다. 이메일로 사업자등록번호와 세금계산서 수신 이메일을 함께 보내주시면 발행해 드립니다.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        여러 명이 같은 리포트를 공유할 수 있나요?
+        <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">구매한 리포트는 구매자 1인 또는 1개 법인의 내부 업무용으로만 사용 가능합니다. 외부 배포, 재판매, 무단 공유는 금지됩니다. 팀 또는 기업 라이선스가 필요하시면 별도 문의 주세요.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        준비중인 리포트 출시 알림을 받을 수 있나요?
+        <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">이메일로 알림 신청을 해주시면 새 리포트 출시 시 가장 먼저 안내해 드립니다. <a href="mailto:report@goldenkp.com" style="color:var(--mint-500); font-weight:700;">report@goldenkp.com</a>으로 "출시 알림 신청"이라고 보내주세요.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+
+      <div class="footer__brand">
+        <a href="../index.html" class="nav__logo" style="margin-bottom:var(--space-md);">
+          <img src="../img/gk_logo.png" alt="GoldenKP 로고" class="nav__logo-mark nav__logo-img">
+          <span class="nav__logo-text">Golden<span>KP</span></span>
+        </a>
+        <p>지식과 기술로 새로운 가치를 만드는 1인 지식기업.<br>
+        eSPORTS · 건강기능식품 · 동네마켓서비스 · 시장조사 리포트</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>사업분야</h4>
+        <ul>
+          <li><a href="business.html">eSPORTS 협력사업</a></li>
+          <li><a href="shop.html">건강기능식품 쇼핑몰</a></li>
+          <li><a href="dongne.html">동네마켓서비스</a></li>
+          <li><a href="market_rs.html">시장조사 리포트</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>정보</h4>
+        <ul>
+          <li><a href="privacy.html">개인정보처리방침</a></li>
+          <li><a href="mailto:signal386@empas.com">이메일 문의</a></li>
+          <li><a href="https://goldenkp.com">goldenkp.com</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__legal">
+      <div class="footer__policies">
+        <a href="terms.html">이용약관</a>
+        <a href="privacy.html">개인정보처리방침</a>
+      </div>
+      <!-- 사업 개시 전까지 비공개: 오픈 시 아래 "footer__company-info--pending" 클래스와 안내 문구(footer__pending-note)를 제거하세요 -->
+      <div class="footer__company-info footer__company-info--pending">
+        <span>상호명: 골든케이피 크리에티브랩</span>
+        <span>대표자: 함광근</span>
+        <span>사업자등록번호: 233-21-02210</span>
+        <span>주소: 서울특별시 강동구 고덕로16길 44-9, 3층 301호 (암사동)</span><br>
+        <span>대표번호: </span>
+        <span>통신판매업신고번호: 제2023-서울강동-2521호</span>
+      </div>
+      <p class="footer__pending-note">※ 사업자 정보는 사업 개시 후 공개됩니다.</p>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© 2026 GoldenKP / 함광근. All rights reserved.</span>
+      <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--clr-text-3);">
+        문의: signal386@empas.com
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- SAMPLE MODAL -->
+<div class="modal-overlay" id="sampleModal" onclick="closeSampleModal(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title">🎮 맛보기 샘플</div>
+        <div class="modal-subtitle">경기북부 e스포츠 시장동향 분석 2025</div>
+      </div>
+      <button class="modal-close" onclick="closeSampleModal()">✕</button>
+    </div>
+    <div class="modal-body">
+
+      <div class="modal-section">
+        <h3>📌 핵심 수치 <span>(공개)</span></h3>
+        <div class="sample-stat-grid">
+          <div class="sample-stat">
+            <div class="sample-stat-val">23%</div>
+            <div class="sample-stat-lbl">연평균 시장 성장률</div>
+          </div>
+          <div class="sample-stat">
+            <div class="sample-stat-val">12개</div>
+            <div class="sample-stat-lbl">경기북부 e스포츠 거점</div>
+          </div>
+          <div class="sample-stat">
+            <div class="sample-stat-val">4.2만</div>
+            <div class="sample-stat-lbl">활성 플레이어 수(추정)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-section">
+        <h3>📈 시장 규모 추이 <span>(샘플)</span></h3>
+        <div class="sample-chart">
+          <div class="chart-title">경기북부 e스포츠 시장 규모 추이 (단위: 억원)</div>
+          <div class="chart-bars">
+            <div class="chart-bar-wrap"><div class="chart-bar" style="height:38%"></div><div class="chart-bar-lbl">2022</div></div>
+            <div class="chart-bar-wrap"><div class="chart-bar" style="height:52%"></div><div class="chart-bar-lbl">2023</div></div>
+            <div class="chart-bar-wrap"><div class="chart-bar" style="height:68%"></div><div class="chart-bar-lbl">2024</div></div>
+            <div class="chart-bar-wrap"><div class="chart-bar" style="height:85%"></div><div class="chart-bar-lbl">2025(E)</div></div>
+            <div class="chart-bar-wrap blurred"><div class="chart-bar" style="height:100%; background:var(--gray-300)"></div><div class="chart-bar-lbl">2026F</div></div>
+          </div>
+        </div>
+        <p style="font-size:12px; color:var(--gray-400); text-align:center;">* 2026년 전망치는 구매 후 전체 리포트에서 확인 가능합니다.</p>
+      </div>
+
+      <div class="modal-section">
+        <h3>📋 목차 구성</h3>
+        <ul class="sample-toc">
+          <li class="toc-open">
+            <span class="toc-title">제1장. 조사 개요 및 방법론</span>
+            <span style="display:flex;align-items:center;gap:8px"><span class="toc-pages">p.1~8</span><span class="toc-lock">🔓</span></span>
+          </li>
+          <li class="toc-open">
+            <span class="toc-title">제2장. 경기북부 e스포츠 인프라 현황</span>
+            <span style="display:flex;align-items:center;gap:8px"><span class="toc-pages">p.9~28</span><span class="toc-lock">🔓</span></span>
+          </li>
+          <li>
+            <span class="toc-title">제3장. 시장 규모 및 성장률 분석</span>
+            <span style="display:flex;align-items:center;gap:8px"><span class="toc-pages">p.29~52</span><span class="toc-lock" style="filter:grayscale(1);opacity:.4">🔒</span></span>
+          </li>
+          <li>
+            <span class="toc-title">제4장. 주요 플레이어 경쟁 구도</span>
+            <span style="display:flex;align-items:center;gap:8px"><span class="toc-pages">p.53~78</span><span class="toc-lock" style="filter:grayscale(1);opacity:.4">🔒</span></span>
+          </li>
+          <li>
+            <span class="toc-title">제5장. 정책 지원 및 투자 동향</span>
+            <span style="display:flex;align-items:center;gap:8px"><span class="toc-pages">p.79~98</span><span class="toc-lock" style="filter:grayscale(1);opacity:.4">🔒</span></span>
+          </li>
+          <li>
+            <span class="toc-title">제6장. 2026년 시장 전망 및 시사점</span>
+            <span style="display:flex;align-items:center;gap:8px"><span class="toc-pages">p.99~112</span><span class="toc-lock" style="filter:grayscale(1);opacity:.4">🔒</span></span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="modal-cta">
+        <p>전체 리포트 (112페이지) 를 지금 바로 구매하세요.</p>
+        <button class="btn-primary" onclick="closeSampleModal(); openBuyModal('경기북부 e스포츠 시장동향 분석 2025', '198,000')">
+          ₩198,000에 구매하기 →
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- BUY MODAL -->
+<div class="modal-overlay" id="buyModal" onclick="closeBuyModal(event)">
+  <div class="modal buy-modal">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title">구매 안내</div>
+        <div class="modal-subtitle" id="buyModalSubtitle">리포트명</div>
+      </div>
+      <button class="modal-close" onclick="closeBuyModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="buy-steps">
+        <div class="buy-step">
+          <div class="buy-step-num">1</div>
+          <div class="buy-step-text">
+            <h4>아래 계좌로 이체해 주세요</h4>
+            <div class="account-info-box">
+              <div class="account-info-row"><span class="lbl">은행</span><span class="val">카카오뱅크</span></div>
+              <div class="divider"></div>
+              <div class="account-info-row"><span class="lbl">계좌번호</span><span class="val">3333-XXXX-XXXX</span></div>
+              <div class="divider"></div>
+              <div class="account-info-row"><span class="lbl">예금주</span><span class="val">골든케이피 (주)</span></div>
+              <div class="divider"></div>
+              <div class="account-info-row"><span class="lbl">금액</span><span class="val mint" id="buyModalPrice">₩198,000</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="buy-step">
+          <div class="buy-step-num">2</div>
+          <div class="buy-step-text">
+            <h4>이메일로 구매 확인 요청을 보내주세요</h4>
+            <div class="email-info-box">
+              📧 <strong>report@goldenkp.com</strong>
+              <div style="margin-top:8px; font-size:12px; color:var(--gray-600); line-height:1.9;">
+                ✔ 구매 리포트명: <strong id="buyModalItem">리포트명</strong><br/>
+                ✔ 입금자명 및 입금 금액<br/>
+                ✔ PDF를 받으실 이메일 주소
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="buy-step">
+          <div class="buy-step-num">3</div>
+          <div class="buy-step-text">
+            <h4>영업일 기준 1일 이내 발송</h4>
+            <p>입금 확인 후 PDF를 이메일로 발송해 드립니다. 스팸함도 확인해 주세요.</p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:24px; text-align:center;">
+        <a href="mailto:report@goldenkp.com?subject=리포트 구매 확인 요청&body=안녕하세요.%0A%0A구매 리포트: %0A입금자명: %0A입금 금액: %0A수신 이메일: "
+           style="display:inline-block; background:var(--mint-500); color:var(--navy-900); padding:14px 40px; border-radius:9999px; font-weight:700; text-decoration:none; font-size:15px;">
+          이메일 보내기 →
+        </a>
+        <p style="margin-top:12px; font-size:12px; color:var(--gray-400);">버튼 클릭 시 이메일 앱이 열립니다.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/market-report.js"></script>
+<script>updateNav();</script>
+</body>
+</html>
