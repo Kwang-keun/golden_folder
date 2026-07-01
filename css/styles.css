@@ -1331,6 +1331,14 @@ em {
   color: var(--clr-primary);
 }
 
+.footer__admin-link {
+  opacity: 0.55;
+}
+
+.footer__admin-link:hover {
+  opacity: 1;
+}
+
 .footer__legal {
   padding-top: var(--space-xl);
   border-top: 1px solid var(--clr-border);
@@ -1563,4 +1571,125 @@ em {
 @keyframes toast-out {
   from { transform: translateX(0);   opacity: 1; }
   to   { transform: translateX(100%); opacity: 0; }
+}
+
+/* ─── Admin gate modal ─── */
+.admin-gate-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  z-index: 2000;
+}
+
+.admin-gate-box {
+  width: 100%;
+  max-width: 340px;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border-2);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-lift);
+  text-align: center;
+}
+
+.admin-gate-box h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--clr-text);
+  margin-bottom: var(--space-sm);
+}
+
+.admin-gate-box p {
+  font-size: 0.85rem;
+  color: var(--clr-text-2);
+  margin-bottom: var(--space-lg);
+}
+
+.admin-gate-input {
+  width: 100%;
+  padding: var(--space-md);
+  background: var(--clr-bg);
+  border: 1.5px solid var(--clr-border-2);
+  border-radius: var(--radius-sm);
+  color: var(--clr-text);
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.admin-gate-input:focus {
+  border-color: var(--clr-primary);
+}
+
+.admin-gate-error {
+  color: #f87171;
+  font-size: 0.8rem;
+  margin-top: var(--space-sm);
+  margin-bottom: 0;
+}
+
+.admin-gate-actions {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+.admin-gate-btn {
+  flex: 1;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.admin-gate-btn--ghost {
+  background: none;
+  border: 1px solid var(--clr-border-2);
+  color: var(--clr-text-2);
+}
+
+.admin-gate-btn--ghost:hover {
+  border-color: var(--clr-primary);
+  color: var(--clr-primary);
+}
+
+.admin-gate-btn--primary {
+  background: var(--clr-primary);
+  border: 1px solid var(--clr-primary);
+  color: var(--clr-bg);
+}
+
+.admin-gate-btn--primary:hover {
+  background: var(--clr-accent);
+  border-color: var(--clr-accent);
+}
+
+.admin-gate-menu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.admin-gate-menu .btn {
+  width: 100%;
+}
+
+.admin-gate-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--clr-text-2);
+  padding: var(--space-sm);
+}
+
+.admin-gate-link:hover {
+  color: var(--clr-primary);
 }

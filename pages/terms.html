@@ -230,10 +230,7 @@
         <span class="nav__logo-text">Golden<span>KP</span></span>
       </a>
       <a href="../index.html" class="nav__back">← GoldenKP 홈으로</a>
-      <div id="nav-auth" class="nav__auth">
-        <a href="market-login.html" class="nav__auth-link">로그인</a>
-        <a href="market-signup.html" class="nav__auth-cta">회원가입</a>
-      </div>
+      <div id="nav-auth" class="nav__auth"></div>
     </div>
   </nav>
 
@@ -267,6 +264,11 @@
     <div class="highlight-box">
       본 약관은 GoldenKP(이하 "운영자")가 제공하는 웹사이트(goldenkp.com) 및 관련 서비스(시장동향 리포트, 건강기능식품 쇼핑몰, 동네정보 앱 등) 이용과 관련하여 운영자와 이용자 간의 권리·의무 및 책임사항을 규정합니다.
       개인정보 처리에 관한 사항은 <a href="privacy.html" style="color:var(--green-600);">GoldenKP 개인정보처리방침</a>(동네정보 앱은 <a href="privacy-policy.html" style="color:var(--green-600);">동네정보 앱 개인정보처리방침</a>)을 따릅니다.
+    </div>
+
+    <!-- 비공개 안내 -->
+    <div class="highlight-box">
+      📌 <strong>현재 서비스 이용 안내:</strong> 외부 노출로 인한 피해를 방지하기 위해 시장동향 리포트 회원가입·로그인 화면은 현재 비공개로 전환되어 있으며, 운영자를 통한 절차로만 접근이 가능합니다. 건강기능식품 쇼핑몰 역시 상품 소개 단계로 실제 주문·결제 기능은 제공되지 않습니다. 아래 조항들은 해당 기능이 정상 운영될 경우에 적용되는 내용입니다.
     </div>
 
     <!-- 1 -->
@@ -410,6 +412,7 @@
             <li><a href="privacy.html">개인정보처리방침</a></li>
             <li><a href="mailto:signal386@empas.com">이메일 문의</a></li>
             <li><a href="https://goldenkp.com">goldenkp.com</a></li>
+            <li><a href="#" id="admin-gate-link" class="footer__admin-link">관리자</a></li>
           </ul>
         </div>
 
@@ -443,6 +446,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="../js/auth.js"></script>
+  <script src="../js/admin-gate.js"></script>
   <script>updateNav();</script>
 </body>
 </html>

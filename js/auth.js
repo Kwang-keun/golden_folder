@@ -31,9 +31,6 @@ async function updateNav() {
       <button onclick="signOut()" class="nav__auth-link nav__auth-logout">로그아웃</button>
     `;
   } else {
-    navAuth.innerHTML = `
-      <a href="${base}market-login.html" class="nav__auth-link">로그인</a>
-      <a href="${base}market-signup.html" class="nav__auth-cta">회원가입</a>
-    `;
+    navAuth.innerHTML = '';
   }
 }

@@ -155,13 +155,7 @@
         </li>
         <li><a href="notice.html">공지사항</a></li>
       </ul>
-      <div class="nav__cta">
-        <a href="../index.html" class="btn btn-primary">← 홈으로</a>
-      </div>
-      <div id="nav-auth" class="nav__auth">
-        <a href="market-login.html" class="nav__auth-link">로그인</a>
-        <a href="market-signup.html" class="nav__auth-cta">회원가입</a>
-      </div>
+      <div id="nav-auth" class="nav__auth"></div>
       <a href="cart.html" class="nav__cart" aria-label="장바구니">
         <i class="fa-solid fa-bag-shopping"></i>
         <span class="nav__cart-badge">0</span>
@@ -241,6 +235,7 @@
             <li><a href="privacy.html">개인정보처리방침</a></li>
             <li><a href="mailto:signal386@empas.com">이메일 문의</a></li>
             <li><a href="https://goldenkp.com">goldenkp.com</a></li>
+            <li><a href="#" id="admin-gate-link" class="footer__admin-link">관리자</a></li>
           </ul>
         </div>
 
@@ -362,6 +357,7 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="../js/auth.js"></script>
+  <script src="../js/admin-gate.js"></script>
   <script>updateNav();</script>
 </body>
 </html>
