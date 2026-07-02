@@ -156,10 +156,6 @@
         <li><a href="notice.html">공지사항</a></li>
       </ul>
       <div id="nav-auth" class="nav__auth"></div>
-      <a href="cart.html" class="nav__cart" aria-label="장바구니">
-        <i class="fa-solid fa-bag-shopping"></i>
-        <span class="nav__cart-badge">0</span>
-      </a>
       <button class="mobile-menu-btn" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
     </div>
   </nav>
@@ -235,7 +231,7 @@
             <li><a href="privacy.html">개인정보처리방침</a></li>
             <li><a href="mailto:signal386@empas.com">이메일 문의</a></li>
             <li><a href="https://goldenkp.com">goldenkp.com</a></li>
-            <li><a href="#" id="admin-gate-link" class="footer__admin-link">관리자</a></li>
+            <li><a href="#" id="admin-gate-link" class="footer__admin-link">회원 로그인</a></li>
           </ul>
         </div>
 
@@ -299,7 +295,6 @@
               <div class="shop-card__price">₩${p.price}</div>
               <div class="shop-card__rating">★ ${p.rating}</div>
             </div>
-            <button class="shop-card__add" onclick="addToCart('${p.name}')">장바구니 담기</button>
           </div>
         </div>
       `).join('');
@@ -313,12 +308,6 @@
         renderProducts(btn.dataset.cat);
       });
     });
-
-    function addToCart(name) {
-      const badge = document.querySelector('.nav__cart-badge');
-      badge.textContent = parseInt(badge.textContent) + 1;
-      alert(`"${name}"을(를) 장바구니에 담았습니다!`);
-    }
 
     // Nav scroll
     window.addEventListener('scroll', () => {

@@ -98,7 +98,7 @@
         </div>
         <div class="card-actions">
           <button class="btn-card-buy" onclick="openBuyModal('경기북부 e스포츠 시장동향 분석 2025', '198,000')">
-            구매하기
+            구매 문의하기
           </button>
           <button class="btn-card-sample" onclick="openSampleModal()">
             맛보기 샘플 보기
@@ -213,7 +213,7 @@
   <div class="section-header scroll-reveal">
     <div class="section-eyebrow">How to Buy</div>
     <h2 class="section-title">구매 안내</h2>
-    <p class="section-desc">간단한 4단계로 리포트를 받으실 수 있습니다.</p>
+    <p class="section-desc">간단한 3단계로 리포트를 받으실 수 있습니다.</p>
   </div>
 
   <div class="steps">
@@ -221,53 +221,28 @@
       <div class="step-num">1</div>
       <div class="step-content">
         <h3>리포트 선택</h3>
-        <p>원하시는 리포트 카드의 <strong>구매하기</strong> 버튼을 클릭하여 상품명과 금액을 확인합니다.</p>
+        <p>원하시는 리포트 카드의 <strong>구매 문의하기</strong> 버튼을 클릭하여 상품명과 금액을 확인합니다.</p>
       </div>
     </div>
     <div class="step scroll-reveal">
       <div class="step-num">2</div>
       <div class="step-content">
-        <h3>계좌이체</h3>
-        <p>아래 계좌로 리포트 금액을 이체해 주세요. 입금자명은 <strong>이메일 앞 아이디</strong>로 입력해 주시면 확인이 빠릅니다.</p>
-        <div class="account-box">
-          <div class="account-row">
-            <span class="account-label">은행</span>
-            <span class="account-value">카카오뱅크</span>
-          </div>
-          <div class="account-row">
-            <span class="account-label">계좌번호</span>
-            <span class="account-value highlight">3333-XXXX-XXXX</span>
-          </div>
-          <div class="account-row">
-            <span class="account-label">예금주</span>
-            <span class="account-value">골든케이피 (주)</span>
-          </div>
-        </div>
-        <p style="font-size:12px; color:var(--gray-400); margin-top:10px;">
-          ※ 계좌번호는 구매 문의 이메일로 최종 확인해 주세요.
-        </p>
-      </div>
-    </div>
-    <div class="step scroll-reveal">
-      <div class="step-num">3</div>
-      <div class="step-content">
-        <h3>이메일 발송</h3>
-        <p>이체 완료 후 아래 이메일로 다음 내용을 보내주세요.</p>
+        <h3>이메일 문의</h3>
+        <p>아래 이메일로 구매하실 리포트명과 수신 이메일 주소를 보내주시면, 결제 방법을 개별 안내해 드립니다.</p>
         <div class="contact-box">
           📧 <a href="mailto:report@goldenkp.com">report@goldenkp.com</a>
           <div style="margin-top:10px; font-size:13px; color:var(--gray-600); line-height:1.8;">
-            · 구매하신 리포트명<br/>
-            · 입금자명 및 입금 금액<br/>
+            · 구매하실 리포트명<br/>
             · 리포트 수령 이메일 주소
           </div>
         </div>
       </div>
     </div>
     <div class="step scroll-reveal">
-      <div class="step-num">4</div>
+      <div class="step-num">3</div>
       <div class="step-content">
         <h3>리포트 수령</h3>
-        <p>입금 확인 후 <strong>영업일 기준 1일 이내</strong>에 PDF 파일을 이메일로 발송해 드립니다. 스팸함도 확인해 주세요.</p>
+        <p>결제 확인 후 <strong>영업일 기준 1일 이내</strong>에 PDF 파일을 이메일로 발송해 드립니다. 스팸함도 확인해 주세요.</p>
       </div>
     </div>
   </div>
@@ -348,7 +323,7 @@
           <li><a href="privacy.html">개인정보처리방침</a></li>
           <li><a href="mailto:signal386@empas.com">이메일 문의</a></li>
           <li><a href="https://goldenkp.com">goldenkp.com</a></li>
-          <li><a href="#" id="admin-gate-link" class="footer__admin-link">관리자</a></li>
+          <li><a href="#" id="admin-gate-link" class="footer__admin-link">회원 로그인</a></li>
         </ul>
       </div>
 
@@ -458,7 +433,7 @@
       <div class="modal-cta">
         <p>전체 리포트 (112페이지) 를 지금 바로 구매하세요.</p>
         <button class="btn-primary" onclick="closeSampleModal(); openBuyModal('경기북부 e스포츠 시장동향 분석 2025', '198,000')">
-          ₩198,000에 구매하기 →
+          ₩198,000 · 구매 문의하기 →
         </button>
       </div>
 
@@ -471,7 +446,7 @@
   <div class="modal buy-modal">
     <div class="modal-header">
       <div>
-        <div class="modal-title">구매 안내</div>
+        <div class="modal-title">구매 문의</div>
         <div class="modal-subtitle" id="buyModalSubtitle">리포트명</div>
       </div>
       <button class="modal-close" onclick="closeBuyModal()">✕</button>
@@ -481,42 +456,33 @@
         <div class="buy-step">
           <div class="buy-step-num">1</div>
           <div class="buy-step-text">
-            <h4>아래 계좌로 이체해 주세요</h4>
-            <div class="account-info-box">
-              <div class="account-info-row"><span class="lbl">은행</span><span class="val">카카오뱅크</span></div>
-              <div class="divider"></div>
-              <div class="account-info-row"><span class="lbl">계좌번호</span><span class="val">3333-XXXX-XXXX</span></div>
-              <div class="divider"></div>
-              <div class="account-info-row"><span class="lbl">예금주</span><span class="val">골든케이피 (주)</span></div>
-              <div class="divider"></div>
-              <div class="account-info-row"><span class="lbl">금액</span><span class="val mint" id="buyModalPrice">₩198,000</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="buy-step">
-          <div class="buy-step-num">2</div>
-          <div class="buy-step-text">
-            <h4>이메일로 구매 확인 요청을 보내주세요</h4>
+            <h4>이메일로 문의해 주세요</h4>
             <div class="email-info-box">
               📧 <strong>report@goldenkp.com</strong>
               <div style="margin-top:8px; font-size:12px; color:var(--gray-600); line-height:1.9;">
-                ✔ 구매 리포트명: <strong id="buyModalItem">리포트명</strong><br/>
-                ✔ 입금자명 및 입금 금액<br/>
+                ✔ 구매 리포트명: <strong id="buyModalItem">리포트명</strong> · <span id="buyModalPrice">₩198,000</span><br/>
                 ✔ PDF를 받으실 이메일 주소
               </div>
             </div>
           </div>
         </div>
         <div class="buy-step">
+          <div class="buy-step-num">2</div>
+          <div class="buy-step-text">
+            <h4>결제 방법 개별 안내</h4>
+            <p>문의 확인 후 결제 방법을 이메일로 안내해 드립니다.</p>
+          </div>
+        </div>
+        <div class="buy-step">
           <div class="buy-step-num">3</div>
           <div class="buy-step-text">
             <h4>영업일 기준 1일 이내 발송</h4>
-            <p>입금 확인 후 PDF를 이메일로 발송해 드립니다. 스팸함도 확인해 주세요.</p>
+            <p>결제 확인 후 PDF를 이메일로 발송해 드립니다. 스팸함도 확인해 주세요.</p>
           </div>
         </div>
       </div>
       <div style="margin-top:24px; text-align:center;">
-        <a href="mailto:report@goldenkp.com?subject=리포트 구매 확인 요청&body=안녕하세요.%0A%0A구매 리포트: %0A입금자명: %0A입금 금액: %0A수신 이메일: "
+        <a href="mailto:report@goldenkp.com?subject=리포트 구매 문의&body=안녕하세요.%0A%0A구매 리포트: %0A수신 이메일: "
            style="display:inline-block; background:var(--mint-500); color:var(--navy-900); padding:14px 40px; border-radius:9999px; font-weight:700; text-decoration:none; font-size:15px;">
           이메일 보내기 →
         </a>
