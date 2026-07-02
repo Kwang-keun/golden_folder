@@ -93,25 +93,27 @@
       </div>
       <div class="msg msg-error" id="msgError"></div>
 
-      <div class="form-group">
-        <label class="form-label">이름</label>
-        <input type="text" class="form-input" id="name" placeholder="홍길동" />
-      </div>
-      <div class="form-group">
-        <label class="form-label">이메일</label>
-        <input type="email" class="form-input" id="email" placeholder="example@email.com" />
-      </div>
-      <div class="form-group">
-        <label class="form-label">비밀번호</label>
-        <input type="password" class="form-input" id="password" placeholder="비밀번호 입력" />
-        <p class="pw-hint">영문, 숫자 포함 8자 이상</p>
-      </div>
-      <div class="form-group">
-        <label class="form-label">비밀번호 확인</label>
-        <input type="password" class="form-input" id="passwordConfirm" placeholder="비밀번호 재입력" />
-      </div>
+      <form id="signupForm" autocomplete="on">
+        <div class="form-group">
+          <label class="form-label" for="name">이름</label>
+          <input type="text" class="form-input" id="name" name="name" autocomplete="name" placeholder="홍길동" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">이메일</label>
+          <input type="email" class="form-input" id="email" name="email" autocomplete="email" placeholder="example@email.com" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="password">비밀번호</label>
+          <input type="password" class="form-input" id="password" name="password" autocomplete="new-password" placeholder="비밀번호 입력" />
+          <p class="pw-hint">영문, 숫자 포함 8자 이상</p>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="passwordConfirm">비밀번호 확인</label>
+          <input type="password" class="form-input" id="passwordConfirm" name="passwordConfirm" autocomplete="new-password" placeholder="비밀번호 재입력" />
+        </div>
 
-      <button class="btn-submit" id="btnSignup" onclick="handleSignup()">회원가입</button>
+        <button type="submit" class="btn-submit" id="btnSignup">회원가입</button>
+      </form>
 
       <div class="divider"></div>
       <div class="auth-footer">
@@ -188,7 +190,8 @@
 <script>
   updateNav();
 
-  async function handleSignup() {
+  async function handleSignup(e) {
+    e.preventDefault();
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value;
@@ -243,9 +246,7 @@
     }
   }
 
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Enter') handleSignup();
-  });
+  document.getElementById('signupForm').addEventListener('submit', handleSignup);
 </script>
 </body>
 </html>
