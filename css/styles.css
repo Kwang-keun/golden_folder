@@ -1427,6 +1427,21 @@ em {
   transition: var(--transition);
 }
 
+.nav__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 15, 13, 0.75);
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s;
+}
+
+.nav__backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 1024px) {
   .goals-grid {

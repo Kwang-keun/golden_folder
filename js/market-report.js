@@ -55,6 +55,34 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
 
+// 모바일 메뉴 토글 (main.js의 initMobileMenu와 동일한 로직)
+(function () {
+  const btn = document.querySelector('.mobile-menu-btn');
+  const links = document.querySelector('.nav__links');
+  if (!btn || !links) return;
+
+  const backdrop = document.createElement('div');
+  backdrop.className = 'nav__backdrop';
+  document.body.appendChild(backdrop);
+
+  function closeMenu() {
+    links.style.cssText = '';
+    backdrop.classList.remove('open');
+  }
+
+  function openMenu() {
+    links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--navy-900);padding:1.5rem;border-bottom:1px solid rgba(74,222,128,.15);gap:1rem;';
+    backdrop.classList.add('open');
+  }
+
+  btn.addEventListener('click', () => {
+    const isOpen = links.style.display === 'flex';
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  backdrop.addEventListener('click', closeMenu);
+})();
+
 // 사업분야 드롭다운 (main.js의 initNavDropdown과 동일한 로직)
 (function () {
   const dropdown = document.querySelector('.nav__dropdown');

@@ -378,12 +378,26 @@ function initMobileMenu() {
   const links = document.querySelector('.nav__links');
   if (!btn || !links) return;
 
+  const backdrop = document.createElement('div');
+  backdrop.className = 'nav__backdrop';
+  document.body.appendChild(backdrop);
+
+  function closeMenu() {
+    links.style.cssText = '';
+    backdrop.classList.remove('open');
+  }
+
+  function openMenu() {
+    links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--clr-bg);padding:1.5rem;border-bottom:1px solid var(--clr-border);gap:1rem;';
+    backdrop.classList.add('open');
+  }
+
   btn.addEventListener('click', () => {
     const isOpen = links.style.display === 'flex';
-    links.style.cssText = isOpen
-      ? ''
-      : 'display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--clr-bg);padding:1.5rem;border-bottom:1px solid var(--clr-border);gap:1rem;';
+    isOpen ? closeMenu() : openMenu();
   });
+
+  backdrop.addEventListener('click', closeMenu);
 }
 
 /* ─── Nav Dropdown ─── */

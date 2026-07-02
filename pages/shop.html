@@ -143,7 +143,7 @@
         <span class="nav__logo-text">Golden<span>KP</span></span>
       </a>
       <ul class="nav__links" role="list">
-        <li><a href="about.html">회사 소개</a></li>
+        <li><a href="about.html">회사소개</a></li>
         <li class="nav__dropdown">
           <button class="nav__dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">사업분야</button>
           <ul class="nav__dropdown-menu" role="list">
@@ -326,6 +326,35 @@
     });
 
     renderProducts('all');
+
+    // 모바일 메뉴 토글 (main.js의 initMobileMenu와 동일한 로직;
+    // shop.html은 자체 renderProducts()를 정의하므로 main.js는 불러오지 않음)
+    (function () {
+      const btn = document.querySelector('.mobile-menu-btn');
+      const links = document.querySelector('.nav__links');
+      if (!btn || !links) return;
+
+      const backdrop = document.createElement('div');
+      backdrop.className = 'nav__backdrop';
+      document.body.appendChild(backdrop);
+
+      function closeMenu() {
+        links.style.cssText = '';
+        backdrop.classList.remove('open');
+      }
+
+      function openMenu() {
+        links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--clr-bg);padding:1.5rem;border-bottom:1px solid var(--clr-border);gap:1rem;';
+        backdrop.classList.add('open');
+      }
+
+      btn.addEventListener('click', () => {
+        const isOpen = links.style.display === 'flex';
+        isOpen ? closeMenu() : openMenu();
+      });
+
+      backdrop.addEventListener('click', closeMenu);
+    })();
 
     // 사업분야 드롭다운 (main.js의 initNavDropdown과 동일한 로직;
     // shop.html은 자체 renderProducts()를 정의하므로 main.js는 불러오지 않음)

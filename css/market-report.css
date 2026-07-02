@@ -180,6 +180,57 @@ nav {
 }
 .nav__auth-logout:hover { border-color: rgba(255,255,255,.6); }
 
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 32px;
+  padding: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.mobile-menu-btn span {
+  display: block;
+  height: 1.5px;
+  background: rgba(255,255,255,.75);
+  border-radius: 1px;
+}
+
+.nav__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 15, 13, 0.75);
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s;
+}
+
+.nav__backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 768px) {
+  .nav__links { display: none; }
+  .mobile-menu-btn { display: flex; }
+
+  .nav__dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    display: none;
+    background: none;
+    border: none;
+    padding: 8px 0 0 20px;
+  }
+  .nav__dropdown.open .nav__dropdown-menu {
+    display: block;
+  }
+}
+
 /* ── HERO ──────────────────────────────── */
 .hero {
   min-height: 100vh;
