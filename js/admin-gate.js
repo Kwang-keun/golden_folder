@@ -1,23 +1,14 @@
-function authBasePath() {
-  return location.pathname.includes('/pages/') ? '' : 'pages/';
-}
-
 function closeAdminGateOverlay(overlay) {
   overlay.remove();
 }
 
 function openAdminMenu() {
-  const base = authBasePath();
   const overlay = document.createElement('div');
   overlay.className = 'admin-gate-overlay';
   overlay.innerHTML = `
     <div class="admin-gate-box">
-      <h3>회원 메뉴</h3>
-      <p>회원 로그인 / 회원가입 페이지로 이동합니다.</p>
-      <div class="admin-gate-menu">
-        <a href="${base}market-login.html" class="btn btn-primary">로그인</a>
-        <a href="${base}market-signup.html" class="admin-gate-link">회원가입</a>
-      </div>
+      <h3>회원 서비스</h3>
+      <p>회원 로그인 / 회원가입 기능은 현재 준비 중입니다. 서비스 오픈 후 이용하실 수 있습니다.</p>
       <div class="admin-gate-actions">
         <button type="button" class="admin-gate-btn admin-gate-btn--ghost" data-close>닫기</button>
       </div>

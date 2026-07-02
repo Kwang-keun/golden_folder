@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>회원가입 | GoldenKP 리포트</title>
+  <title>회원가입 (준비중) | GoldenKP 리포트</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/styles.css" />
@@ -85,40 +85,14 @@
   <div class="auth-box">
     <div class="auth-header">
       <h1>회원가입</h1>
-      <p>GoldenKP 리포트 서비스에 오신 것을 환영합니다</p>
+      <p>GoldenKP 리포트 서비스</p>
     </div>
-    <div class="auth-body">
-      <div class="msg msg-success" id="msgSuccess">
-        📧 인증 이메일을 발송했습니다. 이메일을 확인해 주세요!
-      </div>
-      <div class="msg msg-error" id="msgError"></div>
-
-      <form id="signupForm" autocomplete="on">
-        <div class="form-group">
-          <label class="form-label" for="name">이름</label>
-          <input type="text" class="form-input" id="name" name="name" autocomplete="name" placeholder="홍길동" />
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="email">이메일</label>
-          <input type="email" class="form-input" id="email" name="email" autocomplete="email" placeholder="example@email.com" />
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="password">비밀번호</label>
-          <input type="password" class="form-input" id="password" name="password" autocomplete="new-password" placeholder="비밀번호 입력" />
-          <p class="pw-hint">영문, 숫자 포함 8자 이상</p>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="passwordConfirm">비밀번호 확인</label>
-          <input type="password" class="form-input" id="passwordConfirm" name="passwordConfirm" autocomplete="new-password" placeholder="비밀번호 재입력" />
-        </div>
-
-        <button type="submit" class="btn-submit" id="btnSignup">회원가입</button>
-      </form>
-
-      <div class="divider"></div>
-      <div class="auth-footer">
-        이미 계정이 있으신가요? <a href="market-login.html">로그인</a>
-      </div>
+    <div class="auth-body" style="text-align:center;">
+      <p style="color:var(--gray-600);line-height:1.8;margin-bottom:28px;">
+        회원가입 기능은 현재 준비 중입니다.<br>
+        서비스 오픈 후 이용하실 수 있습니다.
+      </p>
+      <a href="market_rs.html" class="btn-submit" style="display:block;text-decoration:none;line-height:1.4;">시장조사 리포트로 돌아가기</a>
     </div>
   </div>
 </div>
@@ -184,69 +158,6 @@
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="../js/auth.js"></script>
 <script src="../js/admin-gate.js"></script>
-<script>
-  updateNav();
-
-  async function handleSignup(e) {
-    e.preventDefault();
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value;
-    const passwordConfirm = document.getElementById('passwordConfirm').value;
-    const btn = document.getElementById('btnSignup');
-    const msgSuccess = document.getElementById('msgSuccess');
-    const msgError = document.getElementById('msgError');
-
-    msgSuccess.classList.remove('show');
-    msgError.classList.remove('show');
-
-    if (!name || !email || !password || !passwordConfirm) {
-      msgError.textContent = '모든 항목을 입력해 주세요.';
-      msgError.classList.add('show');
-      return;
-    }
-    if (password.length < 8) {
-      msgError.textContent = '비밀번호는 8자 이상이어야 합니다.';
-      msgError.classList.add('show');
-      return;
-    }
-    if (password !== passwordConfirm) {
-      msgError.textContent = '비밀번호가 일치하지 않습니다.';
-      msgError.classList.add('show');
-      return;
-    }
-
-    btn.disabled = true;
-    btn.textContent = '처리 중...';
-
-    const { error } = await db.auth.signUp({
-      email,
-      password,
-      options: {
-        data: { name },
-        emailRedirectTo: new URL('market-login.html', window.location.href).href
-      }
-    });
-
-    btn.disabled = false;
-    btn.textContent = '회원가입';
-
-    if (error) {
-      msgError.textContent = '오류: ' + error.message;
-      msgError.classList.add('show');
-    } else {
-      msgSuccess.classList.add('show');
-      document.getElementById('name').value = '';
-      document.getElementById('email').value = '';
-      document.getElementById('password').value = '';
-      document.getElementById('passwordConfirm').value = '';
-    }
-  }
-
-  document.getElementById('signupForm').addEventListener('submit', handleSignup);
-</script>
 </body>
 </html>
