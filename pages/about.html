@@ -4,11 +4,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="GoldenKP 회사소개 — 지식과 기술로 새로운 가치를 만드는 1인 지식기업. eSPORTS 협력사업, 건강기능식품, 동네마켓서비스, 시장조사 리포트.">
+  <meta name="keywords" content="GoldenKP, 골든케이피, e스포츠, 경기북부 e스포츠, 건강기능식품, 동네정보 앱, 시장조사 리포트">
+  <meta property="og:title" content="회사소개 — GoldenKP">
+  <meta property="og:description" content="eSPORTS 협력사업 · 건강기능식품 · 동네마켓서비스 · 시장조사 리포트">
+  <meta property="og:type" content="website">
   <title>회사소개 — GoldenKP</title>
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* 공사중 배너 */
+    .construction-banner {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 36px;
+      z-index: 1001;
+      overflow: hidden;
+      background: var(--clr-gold);
+      display: flex;
+      align-items: center;
+    }
+    .construction-banner__track {
+      display: flex;
+      white-space: nowrap;
+      animation: construction-marquee 18s linear infinite;
+    }
+    .construction-banner__track span {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--clr-bg);
+      letter-spacing: 0.05em;
+      padding-right: 3rem;
+    }
+    @keyframes construction-marquee {
+      from { transform: translateX(-50%); }
+      to   { transform: translateX(0%); }
+    }
+    body.has-construction-banner .nav { top: 36px; }
+    body.has-construction-banner .hero { padding-top: calc(var(--nav-height) + 36px); }
+
+    /* sr-only */
+    .sr-only {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+  </style>
 </head>
-<body>
+<body class="has-construction-banner">
+
+  <!-- ══════════════════════════════
+       UNDER CONSTRUCTION BANNER
+  ══════════════════════════════ -->
+  <div class="construction-banner" role="status" aria-label="공사중 안내">
+    <div class="construction-banner__track">
+      <span>🚧 공사중!!! Under Construction!!!</span>
+      <span>🚧 공사중!!! Under Construction!!!</span>
+      <span>🚧 공사중!!! Under Construction!!!</span>
+      <span>🚧 공사중!!! Under Construction!!!</span>
+      <span>🚧 공사중!!! Under Construction!!!</span>
+      <span>🚧 공사중!!! Under Construction!!!</span>
+      <span>🚧 공사중!!! Under Construction!!!</span>
+      <span>🚧 공사중!!! Under Construction!!!</span>
+    </div>
+  </div>
 
   <!-- ══════════════════════════════
        NAVIGATION
@@ -27,7 +86,7 @@
           <button class="nav__dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">사업분야</button>
           <ul class="nav__dropdown-menu" role="list">
             <li><a href="business.html">eSPORTS 협력사업</a></li>
-            <li><a href="shop.html">건강기능식품 쇼핑몰</a></li>
+            <li><a href="../index.html">🛒 쇼핑몰 홈</a></li>
             <li><a href="dongne.html">동네마켓서비스</a></li>
             <li><a href="market_rs.html">시장조사 리포트</a></li>
           </ul>
@@ -48,54 +107,92 @@
 
 
   <!-- ══════════════════════════════
-       PAGE HEADER
+       HERO
   ══════════════════════════════ -->
-  <header class="hero" id="hero" role="banner" style="min-height:44vh;">
+  <header class="hero" id="hero" role="banner">
     <div class="hero__bg"></div>
     <div class="hero__grid-lines"></div>
-    <div class="container" style="padding-top:var(--space-3xl);padding-bottom:var(--space-2xl);">
-      <div style="max-width:640px;">
-        <div class="hero__eyebrow">
-          <div class="hero__eyebrow-line"></div>
-          <span class="section-label">About · Solo Knowledge Entrepreneur · Since 2024</span>
+
+    <div class="container">
+      <div class="hero__content">
+
+        <div class="hero__text">
+          <div class="hero__eyebrow">
+            <div class="hero__eyebrow-line"></div>
+            <span class="section-label">About · Solo Knowledge Entrepreneur · Since 2024</span>
+          </div>
+
+          <h1 class="display-xl hero__title">
+            지식과 기술로<br>
+            <em>새로운 가치를</em><br>
+            만듭니다
+          </h1>
+
+          <p class="hero__desc">
+            GoldenKP(골든케이피)는 한 사람이 기획·개발·운영을 직접 맡아<br>
+            여러 사업을 동시에 굴리는 1인 지식기업입니다.
+          </p>
+
+          <div class="hero__actions">
+            <a href="../index.html" class="btn btn-primary"
+               style="font-size:1rem;padding:0.85rem 2rem;font-weight:700;
+                      background:var(--clr-gold);color:var(--clr-bg);">
+              🛒 쇼핑몰 바로가기
+            </a>
+            <a href="market_rs.html" class="btn btn-primary"
+               style="font-size:1rem;padding:0.85rem 2rem;font-weight:700;
+                      background:var(--clr-primary);color:var(--clr-bg);">
+              📊 시장조사 리포트
+            </a>
+          </div>
+
+          <div class="hero__stats">
+            <div>
+              <div class="hero__stat-value">2024</div>
+              <div class="hero__stat-label">설립연도</div>
+            </div>
+            <div>
+              <div class="hero__stat-value">4개</div>
+              <div class="hero__stat-label">사업분야</div>
+            </div>
+            <div>
+              <div class="hero__stat-value">2+</div>
+              <div class="hero__stat-label">출시 앱</div>
+            </div>
+            <div>
+              <div class="hero__stat-value">100%</div>
+              <div class="hero__stat-label">1인 제작</div>
+            </div>
+          </div>
         </div>
-        <h1 class="display-xl hero__title" style="margin-bottom:var(--space-lg);">
-          지식과 기술로<br><em>새로운 가치를</em> 만듭니다
-        </h1>
-        <p class="hero__desc" style="max-width:560px;">
-          GoldenKP(골든케이피)는 한 사람이 기획·개발·운영을 직접 맡아 여러 사업을 동시에 굴리는 1인 지식기업입니다.
-          e스포츠 협력사업부터 건강기능식품, 생활정보 앱, 시장조사 리포트까지 — 각 분야의 전문성을 연결해 실질적인 가치를 만듭니다.
-        </p>
+
+        <!-- 플로팅 카드 비주얼 -->
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__orb">
+            <div class="hero__molecule">
+              <span class="molecule-text">GKP</span>
+            </div>
+          </div>
+          <div class="hero__float-card">
+            <div class="float-card__label">신규 앱</div>
+            <div class="float-card__value">동네정보</div>
+            <div class="float-card__sub">🏘️ Google Play 출시예정</div>
+          </div>
+          <div class="hero__float-card">
+            <div class="float-card__label">사업영역</div>
+            <div class="float-card__value">4개 분야</div>
+            <div class="float-card__sub">📊 e스포츠·쇼핑몰·앱·리포트</div>
+          </div>
+          <div class="hero__float-card">
+            <div class="float-card__label">리포트</div>
+            <div class="float-card__value">시장동향</div>
+            <div class="float-card__sub">📈 e스포츠 시장동향 외</div>
+          </div>
+        </div>
+
       </div>
     </div>
   </header>
-
-
-  <!-- ══════════════════════════════
-       핵심 수치
-  ══════════════════════════════ -->
-  <section class="section" style="padding-top:0;">
-    <div class="container">
-      <div class="hero__stats" style="justify-content:center;border-top:none;padding-top:0;margin-top:0;flex-wrap:wrap;">
-        <div>
-          <div class="hero__stat-value">2024</div>
-          <div class="hero__stat-label">설립연도</div>
-        </div>
-        <div>
-          <div class="hero__stat-value">4개</div>
-          <div class="hero__stat-label">사업분야</div>
-        </div>
-        <div>
-          <div class="hero__stat-value">2+</div>
-          <div class="hero__stat-label">출시 앱</div>
-        </div>
-        <div>
-          <div class="hero__stat-value">100%</div>
-          <div class="hero__stat-label">1인 제작</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
 
   <!-- ══════════════════════════════
@@ -154,7 +251,7 @@
           </div>
         </a>
 
-        <a href="shop.html" class="goal-card reveal reveal-delay-2" style="text-decoration:none;color:inherit;">
+        <a href="../index.html" class="goal-card reveal reveal-delay-2" style="text-decoration:none;color:inherit;">
           <div class="goal-card__icon">💊</div>
           <div class="goal-card__title">건강기능식품 쇼핑몰</div>
           <div class="goal-card__desc">
@@ -196,6 +293,22 @@
 
 
   <!-- ══════════════════════════════
+       PARTNERS SECTION
+  ══════════════════════════════ -->
+  <section class="partners-section section" id="partners" style="text-align:center;">
+    <div class="container">
+      <span class="section-label">Our Partners</span>
+      <div class="partners-strip reveal">
+        <img src="../img/iesi_logo.png" alt="국제eSPORTS진흥원 경기북부연합회" class="partners-strip__logo">
+        <img src="../img/saka_logo.png" alt="한국생활체육총연맹" class="partners-strip__logo">
+        <img src="../img/kmc_logo.png" alt="한국무예위원회" class="partners-strip__logo">
+      </div>
+      <a href="business.html#partners" class="partners-strip__link">협력기관 자세히 보기 →</a>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════
        CTA
   ══════════════════════════════ -->
   <section class="section" style="background:var(--clr-surface); text-align:center;">
@@ -232,7 +345,7 @@
           <h4>사업분야</h4>
           <ul>
             <li><a href="business.html">eSPORTS 협력사업</a></li>
-            <li><a href="shop.html">건강기능식품 쇼핑몰</a></li>
+            <li><a href="../index.html">🛒 쇼핑몰 홈</a></li>
             <li><a href="dongne.html">동네마켓서비스</a></li>
             <li><a href="market_rs.html">시장조사 리포트</a></li>
           </ul>
@@ -275,15 +388,6 @@
       </div>
     </div>
   </footer>
-
-
-  <style>
-    .sr-only {
-      position: absolute; width: 1px; height: 1px;
-      padding: 0; margin: -1px; overflow: hidden;
-      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
-    }
-  </style>
 
   <script src="../js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>

@@ -3,15 +3,187 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="GoldenKP — 지식과 기술로 새로운 가치를 만드는 1인 지식기업. eSPORTS 협력사업, 건강기능식품, 동네마켓서비스, 시장조사 리포트.">
-  <meta name="keywords" content="GoldenKP, 골든케이피, e스포츠, 경기북부 e스포츠, 건강기능식품, 동네정보 앱, 시장조사 리포트">
-  <meta property="og:title" content="GoldenKP — 지식과 기술로 새로운 가치를">
-  <meta property="og:description" content="eSPORTS 협력사업 · 건강기능식품 · 동네마켓서비스 · 시장조사 리포트">
-  <meta property="og:type" content="website">
-  <title>GoldenKP — 지식과 기술로 새로운 가치를</title>
+  <meta name="description" content="GoldenKP가 직접 검증한 엄선 제품. 전통발효식품·헬스케어·리빙가전을 만나보세요.">
+  <title>GoldenKP 쇼핑몰 — 대자연된장·큐리신·아이오나이저</title>
   <link rel="stylesheet" href="css/styles.css">
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .shop-hero {
+      min-height: 50vh;
+      display: flex; align-items: center;
+      padding-top: var(--nav-height);
+      background: linear-gradient(135deg, #f0faf5 0%, #ffffff 60%);
+      position: relative; overflow: hidden;
+      border-bottom: 1px solid var(--clr-border);
+    }
+    .shop-hero__content { position: relative; z-index: 2; }
+    .shop-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      color: var(--clr-text); line-height: 1.15;
+      margin-bottom: var(--space-lg);
+    }
+    .shop-hero__title em { color: var(--clr-primary); font-style: normal; }
+
+    /* 필터 바 */
+    .shop-filter {
+      background: #ffffff;
+      border-bottom: 1px solid var(--clr-border);
+      padding: var(--space-lg) 0;
+      position: sticky; top: var(--nav-height); z-index: 50;
+    }
+    .shop-filter__inner {
+      max-width: var(--max-width); margin: 0 auto;
+      padding: 0 var(--space-xl);
+      display: flex; align-items: center; gap: var(--space-md);
+      flex-wrap: wrap;
+    }
+    .filter-tab {
+      padding: var(--space-sm) var(--space-lg);
+      border-radius: var(--radius-full);
+      font-size: 0.875rem; font-weight: 500;
+      border: 1px solid var(--clr-border-2);
+      color: var(--clr-text-3);
+      transition: var(--transition);
+      cursor: pointer; font-family: var(--font-body);
+      background: none;
+    }
+    .filter-tab:hover { border-color: var(--clr-primary); color: var(--clr-primary); }
+    .filter-tab.active { background: var(--clr-primary); border-color: var(--clr-primary); color: #ffffff; }
+    .filter-tab__count { opacity: 0.65; font-size: 0.8em; margin-left: 0.15em; }
+
+    /* 상품 그리드 */
+    .shop-grid-section { padding: var(--space-3xl) 0; background: #f7f8fa; }
+    .shop-products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    /* 상품 카드 (기존 product-card 스타일 활용) */
+    .shop-card {
+      background: #ffffff;
+      border: 1px solid var(--clr-border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      position: relative;
+      display: block;
+      text-decoration: none;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .shop-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+      border-color: var(--clr-primary);
+    }
+    .shop-card__img {
+      width: 100%; aspect-ratio: 1 / 1; height: auto;
+      background: #ffffff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3.5rem; position: relative; overflow: hidden;
+      padding: var(--space-lg);
+    }
+    .shop-card__img img {
+      max-width: 82%; max-height: 82%;
+      width: auto; height: auto;
+      object-fit: contain;
+      margin: auto;
+    }
+
+    /* 이미지 카드 뱃지 (쿠팡 스타일) */
+    .shop-card__badges {
+      position: absolute; top: 8px; left: 8px; z-index: 2;
+      display: flex; flex-direction: column; gap: 4px;
+      align-items: flex-start;
+    }
+    .shop-card__badge {
+      font-size: 0.62rem; font-weight: 700;
+      line-height: 1; letter-spacing: -0.01em;
+      padding: 4px 6px; border-radius: 4px;
+      color: #ffffff; font-family: var(--font-body);
+      white-space: nowrap;
+    }
+    .shop-card__badge.badge-award { background: #ffb800; color: #1a1a1a; }
+    .shop-card__badge.badge-pre   { background: #1976d2; }
+    .shop-card__badge.badge-hot   { background: #e53935; }
+    .shop-card__badge.badge-new   { background: #00a862; }
+
+    /* 찜하기 버튼 */
+    .shop-card__wish {
+      position: absolute; top: 6px; right: 6px; z-index: 2;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--clr-border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; cursor: pointer;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      transition: var(--transition);
+    }
+    .shop-card__wish:hover { transform: scale(1.1); }
+    .shop-card__body { padding: 14px 16px 16px; }
+    .shop-card__tag {
+      font-size: 0.7rem; font-weight: 600;
+      color: var(--clr-text-3);
+      margin-bottom: 4px;
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .shop-card__name {
+      font-family: var(--font-display); font-size: 1rem;
+      font-weight: 700; color: var(--clr-text);
+      margin-bottom: 4px; line-height: 1.4;
+    }
+    .shop-card__desc {
+      font-size: 0.78rem; color: var(--clr-text-3);
+      line-height: 1.55; margin-bottom: 10px;
+      display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+    .shop-card__price {
+      font-family: var(--font-display); font-size: 1.25rem;
+      font-weight: 700; color: #1a1a1a;
+      margin-bottom: 6px;
+    }
+    .shop-card__price em {
+      color: var(--clr-primary);
+      font-style: normal;
+    }
+    .shop-card__rating {
+      display: flex; align-items: center; gap: 0.3rem;
+      font-size: 0.72rem; color: var(--clr-text-3);
+      margin-bottom: 8px;
+    }
+    .shop-card__rating .stars { color: #ffb800; letter-spacing: 1px; font-size: 0.75rem; }
+    .shop-card__delivery {
+      display: flex; align-items: center; gap: 0.35rem;
+      font-size: 0.72rem; color: #1976d2;
+      font-weight: 500;
+      padding-top: 8px;
+      border-top: 1px solid var(--clr-border);
+    }
+    .shop-card__add {
+      width: 100%; padding: 10px;
+      background: var(--clr-primary-glow);
+      border: 1.5px solid var(--clr-primary);
+      border-radius: 8px;
+      color: var(--clr-primary); font-size: 0.85rem;
+      font-weight: 700; transition: var(--transition);
+      font-family: var(--font-body); cursor: pointer;
+      margin-top: 10px;
+    }
+    .shop-card__add:hover {
+      background: var(--clr-primary); border-color: var(--clr-primary); color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+      .shop-filter__inner { gap: var(--space-sm); }
+      .shop-products-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .shop-products-grid { grid-template-columns: 1fr; }
+    }
+  </style>
   <style>
     .construction-banner {
       position: fixed;
@@ -43,26 +215,19 @@
     body.has-construction-banner .nav {
       top: 36px;
     }
-    body.has-construction-banner .hero {
+    body.has-construction-banner .shop-hero {
       padding-top: calc(var(--nav-height) + 36px);
+    }
+    body.has-construction-banner .shop-filter {
+      top: calc(var(--nav-height) + 36px);
     }
   </style>
 </head>
 <body class="has-construction-banner">
 
-  <!-- ══════════════════════════════
-       UNDER CONSTRUCTION BANNER
-  ══════════════════════════════ -->
+  <!-- 공사중 배너 -->
   <div class="construction-banner" role="status" aria-label="공사중 안내">
     <div class="construction-banner__track">
-      <span>🚧 공사중!!! Under Construction!!!</span>
-      <span>🚧 공사중!!! Under Construction!!!</span>
-      <span>🚧 공사중!!! Under Construction!!!</span>
-      <span>🚧 공사중!!! Under Construction!!!</span>
-      <span>🚧 공사중!!! Under Construction!!!</span>
-      <span>🚧 공사중!!! Under Construction!!!</span>
-      <span>🚧 공사중!!! Under Construction!!!</span>
-      <span>🚧 공사중!!! Under Construction!!!</span>
       <span>🚧 공사중!!! Under Construction!!!</span>
       <span>🚧 공사중!!! Under Construction!!!</span>
       <span>🚧 공사중!!! Under Construction!!!</span>
@@ -74,159 +239,82 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════
-       NAVIGATION
-  ══════════════════════════════ -->
-  <nav class="nav" role="navigation" aria-label="메인 네비게이션">
+  <!-- NAV -->
+  <nav class="nav" role="navigation">
     <div class="nav__inner">
-
-      <a href="#" class="nav__logo" aria-label="GoldenKP 홈">
+      <a href="index.html" class="nav__logo">
         <img src="img/gk_logo.png" alt="GoldenKP 로고" class="nav__logo-mark nav__logo-img">
         <span class="nav__logo-text">Golden<span>KP</span></span>
       </a>
-
       <ul class="nav__links" role="list">
         <li><a href="pages/about.html">회사소개</a></li>
         <li class="nav__dropdown">
           <button class="nav__dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">사업분야</button>
           <ul class="nav__dropdown-menu" role="list">
+            <li><a href="pages/about.html">🏠 회사 홈페이지</a></li>
             <li><a href="pages/business.html">eSPORTS 협력사업</a></li>
-            <li><a href="pages/shop.html">건강기능식품 쇼핑몰</a></li>
             <li><a href="pages/dongne.html">동네마켓서비스</a></li>
             <li><a href="pages/market_rs.html">시장조사 리포트</a></li>
           </ul>
         </li>
         <li><a href="pages/notice.html">공지사항</a></li>
       </ul>
-
-      <div id="nav-auth" class="nav__auth"></div>
-
-      <button class="mobile-menu-btn" aria-label="메뉴 열기" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
+      <div style="display:flex;align-items:center;gap:var(--space-md);">
+        <button class="nav__cart" type="button" onclick="openCartSummary()" aria-label="장바구니">
+          🛒<span id="cart-badge" class="nav__cart-badge">0</span>
+        </button>
+        <div id="nav-auth" class="nav__auth"></div>
+      </div>
+      <button class="mobile-menu-btn" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
-
-  <!-- ══════════════════════════════
-       HERO
-  ══════════════════════════════ -->
-  <header class="hero" id="hero" role="banner">
-    <div class="hero__bg"></div>
-    <div class="hero__grid-lines"></div>
-
+  <!-- HERO -->
+  <header class="shop-hero">
     <div class="container">
-      <div class="hero__content">
-
-        <!-- Left: Text -->
-        <div class="hero__text">
-          <div class="hero__eyebrow">
-            <div class="hero__eyebrow-line"></div>
-            <span class="section-label">Solo Knowledge Entrepreneur · Since 2024</span>
-          </div>
-
-          <h1 class="display-xl hero__title">
-            지식과 기술로<br>
-            <em>새로운 가치를</em><br>
-            만듭니다
-          </h1>
-
-          <p class="hero__desc">
-            eSPORTS · 건강기능식품 · 동네마켓서비스 · 시장조사 리포트.<br>GoldenKP는 혼자서도 기업처럼 움직입니다.
-          </p>
-
-          <div class="hero__actions">
-            <a href="pages/shop.html" class="btn btn-primary"
-               style="font-size:1rem;padding:0.85rem 2rem;font-weight:700;
-                      background:var(--clr-gold);color:var(--clr-bg);">
-              🛒 쇼핑몰 바로가기
-            </a>
-            <a href="pages/market_rs.html" class="btn btn-primary"
-               style="font-size:1rem;padding:0.85rem 2rem;font-weight:700;
-                      background:var(--clr-primary);color:var(--clr-bg);">
-              📊 시장조사 리포트 바로가기
-            </a>
-          </div>
-
-          <div class="hero__stats">
-            <div>
-              <div class="hero__stat-value">2+</div>
-              <div class="hero__stat-label">출시 앱</div>
-            </div>
-            <div>
-              <div class="hero__stat-value">5년+</div>
-              <div class="hero__stat-label">업력</div>
-            </div>
-            <div>
-              <div class="hero__stat-value">100%</div>
-              <div class="hero__stat-label">1인 제작</div>
-            </div>
-          </div>
+      <div class="shop-hero__content">
+        <span class="section-label" style="display:block;margin-bottom:var(--space-md);">Curated Distribution Brands</span>
+        <h1 class="shop-hero__title">
+          엄선된 브랜드,<br>
+          <em>신뢰의 유통</em>
+        </h1>
+        <p style="font-size:1.05rem;color:var(--clr-text-2);max-width:520px;margin-bottom:var(--space-xl);line-height:1.8;font-size:1.1rem;">
+          전통 발효식품부터 헬스케어, 리빙가전까지 — GoldenKP가 직접 검증하고 엄선한 유통 브랜드 제품을 만나보세요.
+        </p>
+        <div style="display:flex;gap:var(--space-md);flex-wrap:wrap;">
+          <a href="#all" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2rem;">
+            전체 제품 보기
+          </a>
+          <a href="mailto:dr.ham82@gmail.com" class="btn btn-outline">제품 문의</a>
         </div>
-
-        <!-- Right: Visual -->
-        <div class="hero__visual" aria-hidden="true">
-          <div class="hero__orb">
-            <div class="hero__molecule">
-              <span class="molecule-text">VitC</span>
-            </div>
-          </div>
-
-          <!-- Float card 1 -->
-          <div class="hero__float-card">
-            <div class="float-card__label">신규 앱</div>
-            <div class="float-card__value">동네정보</div>
-            <div class="float-card__sub">🏘️ Google Play 출시예정</div>
-          </div>
-
-          <!-- Float card 2 -->
-          <div class="hero__float-card">
-            <div class="float-card__label">사업영역</div>
-            <div class="float-card__value">4개 분야</div>
-            <div class="float-card__sub">📊 e스포츠·쇼핑몰·앱마켓·리포트</div>
-          </div>
-
-          <!-- Float card 3 -->
-          <div class="hero__float-card">
-            <div class="float-card__label float-card__label--white">리포트</div>
-            <div class="float-card__value">시장동향</div>
-            <div class="float-card__sub">📈 e스포츠 시장동향외</div>
-          </div>
-        </div>
-
       </div>
     </div>
   </header>
 
+  <!-- 필터 바 -->
+  <div class="shop-filter">
+    <div class="shop-filter__inner">
+      <button class="filter-tab active" data-cat="all">전체<span class="filter-tab__count"></span></button>
+      <button class="filter-tab" data-cat="ferment">🍶 전통 발효식품<span class="filter-tab__count"></span></button>
+      <button class="filter-tab" data-cat="health">🧴 헬스케어<span class="filter-tab__count"></span></button>
+      <button class="filter-tab" data-cat="living">💧 리빙가전<span class="filter-tab__count"></span></button>
+    </div>
+  </div>
 
-  <!-- ══════════════════════════════
-       PARTNERS SECTION
-  ══════════════════════════════ -->
-  <section class="partners-section section" id="partners" style="text-align:center;">
+  <!-- 상품 그리드 -->
+  <section class="shop-grid-section" id="all">
     <div class="container">
-      <span class="section-label">Our Partners</span>
-      <div class="partners-strip reveal">
-        <img src="img/iesi_logo.png" alt="국제eSPORTS진흥원 경기북부연합회" class="partners-strip__logo">
-        <img src="img/saka_logo.png" alt="한국생활체육총연맹" class="partners-strip__logo">
-        <img src="img/kmc_logo.png" alt="한국무예위원회" class="partners-strip__logo">
-      </div>
-      <a href="pages/business.html#partners" class="partners-strip__link">협력기관 자세히 보기 →</a>
+      <div id="shop-products-grid" class="shop-products-grid"></div>
     </div>
   </section>
 
-
-  <!-- ══════════════════════════════
-       FOOTER
-  ══════════════════════════════ -->
+  <!-- FOOTER -->
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__grid">
 
         <div class="footer__brand">
-          <a href="#" class="nav__logo" style="margin-bottom:var(--space-md);">
+          <a href="index.html" class="nav__logo" style="margin-bottom:var(--space-md);">
             <img src="img/gk_logo.png" alt="GoldenKP 로고" class="nav__logo-mark nav__logo-img">
             <span class="nav__logo-text">Golden<span>KP</span></span>
           </a>
@@ -237,8 +325,8 @@
         <div class="footer__col">
           <h4>사업분야</h4>
           <ul>
+            <li><a href="pages/about.html">🏠 회사 홈페이지</a></li>
             <li><a href="pages/business.html">eSPORTS 협력사업</a></li>
-            <li><a href="pages/shop.html">건강기능식품 쇼핑몰</a></li>
             <li><a href="pages/dongne.html">동네마켓서비스</a></li>
             <li><a href="pages/market_rs.html">시장조사 리포트</a></li>
           </ul>
@@ -282,17 +370,150 @@
     </div>
   </footer>
 
+  <script>
+    // 상품 데이터
+    const PRODUCTS = [
+      {
+        href: 'pages/product-doenjang.html',
+        img: 'img/products/doenjang-majang.jpg',
+        tag: '전통 발효식품',
+        name: '대자연 된장 · 맛장',
+        desc: '10년 숙성 진품장으로 정성껏 담근 전통 발효장. 2018 대한민국 소비자장가대상 수상 · 500g',
+        price: '20,000원 ~ 30,000원',
+        cat: 'ferment',
+        badge: '수상제품', badgeType: 'award',
+        badge2: '사전예약', badge2Type: 'pre',
+      },
+      {
+        href: 'pages/product-curicin.html',
+        img: 'img/products/curicin-pf.jpg',
+        tag: '헬스케어 · NFC Life Science',
+        name: '큐리신 PF (CURICIN PF)',
+        desc: '천연 유래 비마약성·무스테로이드 성분으로 마사지 케어에 활용할 수 있는 크림. US FDA NDC 등록 · 한·일·미 특허 확보',
+        price: '200,000원',
+        cat: 'health',
+        badge: 'FDA 등록', badgeType: 'hot',
+        badge2: '특허제품', badge2Type: 'new',
+      },
+      {
+        href: 'pages/product-activionizer.html',
+        img: 'img/products/activionizer.jpg',
+        tag: '리빙가전 · ESM 정수기',
+        name: '액티브 아이오나이저',
+        desc: '자력 이온화 방식으로 필터·전기 없이 반영구적으로 사용 가능한 친환경 정수기. 무세제 라이프스타일을 지원합니다.',
+        price: '900,000원',
+        cat: 'living',
+        badge: 'MADE IN KOREA', badgeType: 'new',
+        badge2: '무필터', badge2Type: 'hot',
+      },
+    ];
 
-  <!-- ── Visually hidden utility ── -->
-  <style>
-    .sr-only {
-      position: absolute; width: 1px; height: 1px;
-      padding: 0; margin: -1px; overflow: hidden;
-      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    function renderProducts(cat) {
+      const grid = document.getElementById('shop-products-grid');
+      const filtered = cat === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.cat === cat);
+      grid.innerHTML = filtered.map(p => `
+        <a class="shop-card" href="${p.href}">
+          <div class="shop-card__img">
+            ${p.img ? `<img src="${p.img}" alt="${p.name}" loading="lazy">` : p.icon}
+            <div class="shop-card__badges">
+              ${p.badge ? `<span class="shop-card__badge badge-${p.badgeType}">${p.badge}</span>` : ''}
+              ${p.badge2 ? `<span class="shop-card__badge badge-${p.badge2Type}">${p.badge2}</span>` : ''}
+            </div>
+            <button class="shop-card__wish" onclick="event.preventDefault();this.textContent=this.textContent==='🤍'?'❤️':'🤍'" aria-label="찜하기">🤍</button>
+          </div>
+          <div class="shop-card__body">
+            <div class="shop-card__tag">${p.tag}</div>
+            <div class="shop-card__name">${p.name}</div>
+            <div class="shop-card__desc">${p.desc}</div>
+            <div class="shop-card__price">${p.price}</div>
+            <div class="shop-card__rating">
+              <span class="stars">★★★★★</span>
+              <span>(0) 리뷰 준비중</span>
+            </div>
+            <div class="shop-card__delivery">🚚 사전예약 판매</div>
+            <button class="shop-card__add" onclick="event.preventDefault();">장바구니 담기</button>
+          </div>
+        </a>
+      `).join('');
     }
-  </style>
 
-  <script src="js/main.js"></script>
+    // 필터 탭
+    document.querySelectorAll('.filter-tab').forEach(btn => {
+      const cat = btn.dataset.cat;
+      const count = cat === 'all' ? PRODUCTS.length : PRODUCTS.filter(p => p.cat === cat).length;
+      btn.querySelector('.filter-tab__count').textContent = ` (${count})`;
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderProducts(cat);
+      });
+    });
+
+    // Nav scroll
+    window.addEventListener('scroll', () => {
+      document.querySelector('.nav').classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    renderProducts('all');
+
+    // 모바일 메뉴 토글 (main.js의 initMobileMenu와 동일한 로직;
+    // index.html은 자체 renderProducts()를 정의하므로 main.js는 불러오지 않음)
+    (function () {
+      const btn = document.querySelector('.mobile-menu-btn');
+      const links = document.querySelector('.nav__links');
+      if (!btn || !links) return;
+
+      const backdrop = document.createElement('div');
+      backdrop.className = 'nav__backdrop';
+      document.body.appendChild(backdrop);
+
+      function closeMenu() {
+        links.style.cssText = '';
+        backdrop.classList.remove('open');
+      }
+
+      function openMenu() {
+        links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:#ffffff;padding:1.5rem;border-bottom:1px solid #e8e8e8;gap:1rem;box-shadow:0 8px 24px rgba(0,0,0,0.1);';
+        backdrop.classList.add('open');
+      }
+
+      btn.addEventListener('click', () => {
+        const isOpen = links.style.display === 'flex';
+        isOpen ? closeMenu() : openMenu();
+      });
+
+      backdrop.addEventListener('click', closeMenu);
+    })();
+
+    // 사업분야 드롭다운 (main.js의 initNavDropdown과 동일한 로직;
+    // index.html은 자체 renderProducts()를 정의하므로 main.js는 불러오지 않음)
+    (function () {
+      const dropdown = document.querySelector('.nav__dropdown');
+      const toggle = document.querySelector('.nav__dropdown-toggle');
+      if (!dropdown || !toggle) return;
+
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = dropdown.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          dropdown.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+  <script src="js/cart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/auth.js"></script>
   <script src="js/admin-gate.js"></script>

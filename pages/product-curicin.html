@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="큐리신 PF (CURICIN PF) — 마늘 발효 추출물 기반의 비마약성·무스테로이드 크림. US FDA NDC 등록, 한·일·미 특허 확보.">
+  <title>큐리신 PF — GoldenKP 유통쇼핑몰</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <img src="../img/gk_logo.png" alt="GoldenKP 로고" class="nav__logo-mark nav__logo-img">
+        <span class="nav__logo-text">Golden<span>KP</span></span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="about.html">회사소개</a></li>
+        <li class="nav__dropdown">
+          <button class="nav__dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">사업분야</button>
+          <ul class="nav__dropdown-menu" role="list">
+            <li><a href="business.html">eSPORTS 협력사업</a></li>
+            <li><a href="../index.html">건강기능식품 쇼핑몰</a></li>
+            <li><a href="dongne.html">동네마켓서비스</a></li>
+            <li><a href="market_rs.html">시장조사 리포트</a></li>
+          </ul>
+        </li>
+        <li><a href="notice.html">공지사항</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:var(--space-md);">
+        <button class="nav__cart" type="button" onclick="openCartSummary()" aria-label="장바구니">
+          🛒<span id="cart-badge" class="nav__cart-badge">0</span>
+        </button>
+        <div id="nav-auth" class="nav__auth"></div>
+      </div>
+      <button class="mobile-menu-btn" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="pdp-breadcrumb">
+      <a href="../index.html">유통쇼핑몰</a> / <a href="../index.html#all">헬스케어</a> / <span>큐리신 PF</span>
+    </div>
+
+    <div class="pdp-main">
+      <!-- 갤러리 -->
+      <div class="pdp-gallery">
+        <div class="pdp-gallery__main">
+          <img src="../img/products/curicin-pf.jpg" alt="큐리신 PF (CURICIN PF)">
+        </div>
+      </div>
+
+      <!-- 정보 -->
+      <div class="pdp-info">
+        <div class="pdp-badge-row">
+          <span class="pdp-badge">🌿 비마약성 (Non-Opioid)</span>
+          <span class="pdp-badge">무스테로이드 (Steroid-Free)</span>
+          <span class="pdp-badge">US FDA NDC 등록</span>
+        </div>
+        <div class="pdp-tag">헬스케어 · NFC Life Science</div>
+        <h1 class="pdp-title">큐리신 PF (CURICIN PF)</h1>
+        <p class="pdp-tagline">
+          마늘 발효 추출물의 특허 물질(S-allyl cysteine)과 죽순·에센셜 오일 등 천연 성분으로 만든 비마약성·무스테로이드 크림입니다. 원하는 부위에 부드럽게 마사지하듯 사용할 수 있습니다.
+        </p>
+
+        <div class="pdp-price-row">
+          <span class="pdp-price">200,000원</span>
+          <span class="pdp-price-note">/ 1개</span>
+        </div>
+
+        <div class="pdp-trust-row">
+          <span class="pdp-rating"><span class="stars">★★★★★</span> (0) 리뷰 준비중</span>
+          <span class="pdp-delivery">🚚 배송 준비중 · 사전예약 판매</span>
+        </div>
+
+        <div class="pdp-qty-row">
+          <div class="pdp-qty">
+            <button type="button" onclick="changeQty(-1)" aria-label="수량 감소">−</button>
+            <span id="pdp-qty">1</span>
+            <button type="button" onclick="changeQty(1)" aria-label="수량 증가">+</button>
+          </div>
+          <div class="pdp-subtotal">합계 <strong id="pdp-subtotal">200,000원</strong></div>
+        </div>
+
+        <div class="pdp-actions">
+          <button type="button" class="pdp-btn-cart" onclick="handleAddToCart()">🛒 장바구니 담기</button>
+          <button type="button" class="pdp-btn-buy" onclick="checkoutComingSoon()">바로 구매</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="pdp-sections">
+      <section class="pdp-section">
+        <h2 class="pdp-section__title">주요 성분</h2>
+        <div class="pdp-feature-grid">
+          <div class="pdp-feature-item">
+            <div class="pdp-feature-item__icon"><i class="fa-solid fa-mortar-pestle"></i></div>
+            <div class="pdp-feature-item__title">마늘 발효 추출물</div>
+            <div class="pdp-feature-item__desc">특허 물질 S-allyl cysteine(SAC) 함량을 증폭한 발효 추출물로, 마늘 특유의 냄새를 제거했습니다.</div>
+          </div>
+          <div class="pdp-feature-item">
+            <div class="pdp-feature-item__icon"><i class="fa-solid fa-seedling"></i></div>
+            <div class="pdp-feature-item__title">죽순 추출물</div>
+            <div class="pdp-feature-item__desc">비타민 B1(Thiamine), Gamma-cadinene 성분을 함유한 대나무 유래 추출물입니다.</div>
+          </div>
+          <div class="pdp-feature-item">
+            <div class="pdp-feature-item__icon"><i class="fa-solid fa-spa"></i></div>
+            <div class="pdp-feature-item__title">에센셜 오일 컴플렉스</div>
+            <div class="pdp-feature-item__desc">헬리크리섬, 윈터그린, 카모마일 등 20여 종의 천연 허브 발효 추출물을 배합했습니다.</div>
+          </div>
+          <div class="pdp-feature-item">
+            <div class="pdp-feature-item__icon"><i class="fa-solid fa-circle-check"></i></div>
+            <div class="pdp-feature-item__title">무스테로이드 · 비마약성</div>
+            <div class="pdp-feature-item__desc">KOTITI 시험연구원 스테로이드 성분 불검출 시험을 완료했습니다.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="pdp-section">
+        <h2 class="pdp-section__title">인증 및 지적재산권</h2>
+        <div class="pdp-feature-grid">
+          <div class="pdp-feature-item">
+            <div class="pdp-feature-item__icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="pdp-feature-item__title">US FDA NDC 등록</div>
+            <div class="pdp-feature-item__desc">미국 FDA 사이트 등록 및 안전성(안정성) 테스트를 완료했습니다.</div>
+          </div>
+          <div class="pdp-feature-item">
+            <div class="pdp-feature-item__icon"><i class="fa-solid fa-flask"></i></div>
+            <div class="pdp-feature-item__title">KOTITI 스테로이드 불검출</div>
+            <div class="pdp-feature-item__desc">30mg 기준 스테로이드 성분 불검출 시험 성적을 확보했습니다.</div>
+          </div>
+          <div class="pdp-feature-item">
+            <div class="pdp-feature-item__icon"><i class="fa-solid fa-scroll"></i></div>
+            <div class="pdp-feature-item__title">한·일·미 특허 확보</div>
+            <div class="pdp-feature-item__desc">마늘 발효 추출물 및 균주(Lactobacillus plantarum 3063) 제조법에 대한 특허를 3개국에서 획득했습니다.</div>
+          </div>
+          <div class="pdp-feature-item">
+            <div class="pdp-feature-item__icon"><i class="fa-solid fa-microscope"></i></div>
+            <div class="pdp-feature-item__title">KACC 미생물 기탁</div>
+            <div class="pdp-feature-item__desc">국립농업과학원(KACC)에 특허 미생물을 기탁했습니다.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="pdp-section">
+        <h2 class="pdp-section__title">사용 방법</h2>
+        <p>적당량을 손에 덜어 원하는 부위에 부드럽게 마사지하듯 발라주세요. 하루 2~3회 사용을 권장하며, 상처 부위나 눈 주위 사용은 피해주세요.</p>
+      </section>
+
+      <section class="pdp-section">
+        <h2 class="pdp-section__title">상품 정보 제공고시</h2>
+        <table class="pdp-table">
+          <tbody>
+            <tr><th>제품명</th><td>큐리신 PF (CURICIN PF)</td></tr>
+            <tr><th>구분</th><td>외용 크림 (화장품)</td></tr>
+            <tr><th>주요 성분</th><td>마늘 발효 추출물(S-allyl cysteine), 죽순 추출물, 에센셜 오일 컴플렉스</td></tr>
+            <tr><th>특징</th><td>비마약성(Non-Opioid), 무스테로이드(Steroid-Free)</td></tr>
+            <tr><th>인증</th><td>US FDA NDC 등록, KOTITI 스테로이드 불검출 시험</td></tr>
+            <tr><th>제조/유통</th><td>NFC Life Science</td></tr>
+            <tr><th>사용 시 주의사항</th><td>상처 부위·눈 주위 사용 금지. 이상 반응 발생 시 사용을 중단하고 전문의와 상담하세요.</td></tr>
+          </tbody>
+        </table>
+        <div class="pdp-notice">
+          ※ 본 제품은 의약품이 아닌 화장품(외용제)이며, 질병의 진단·치료·경감·처치 또는 예방을 목적으로 사용할 수 없습니다.<br>
+          ※ 본 페이지는 정식 출시 전 사전 안내용이며, 실제 판매 시 상품 정보 및 가격은 변경될 수 있습니다.
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__brand">
+          <a href="../index.html" class="nav__logo" style="margin-bottom:var(--space-md);">
+            <img src="../img/gk_logo.png" alt="GoldenKP 로고" class="nav__logo-mark nav__logo-img">
+            <span class="nav__logo-text">Golden<span>KP</span></span>
+          </a>
+          <p>지식과 기술로 새로운 가치를 만드는 1인 지식기업.<br>
+          eSPORTS · 건강기능식품 · 동네마켓서비스 · 시장조사 리포트</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>사업분야</h4>
+          <ul>
+            <li><a href="business.html">eSPORTS 협력사업</a></li>
+            <li><a href="../index.html">건강기능식품 쇼핑몰</a></li>
+            <li><a href="dongne.html">동네마켓서비스</a></li>
+            <li><a href="market_rs.html">시장조사 리포트</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>정보</h4>
+          <ul>
+            <li><a href="privacy.html">개인정보처리방침</a></li>
+            <li><a href="mailto:dr.ham82@gmail.com">이메일 문의</a></li>
+            <li><a href="https://goldenkp.com">goldenkp.com</a></li>
+            <li><a href="#" id="admin-gate-link" class="footer__admin-link">회원 로그인</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__legal">
+        <div class="footer__policies">
+          <a href="terms.html">이용약관</a>
+          <a href="privacy.html">개인정보처리방침</a>
+        </div>
+        <!-- 사업 개시 전까지 비공개: 오픈 시 아래 "footer__company-info--pending" 클래스와 안내 문구(footer__pending-note)를 제거하세요 -->
+        <div class="footer__company-info footer__company-info--pending">
+          <span>상호명: 골든케이피 크리에티브랩</span>
+          <span>대표자: 함광근</span>
+          <span>사업자등록번호: 233-21-02210</span>
+          <span>주소: 서울특별시 강동구 고덕로16길 44-9, 3층 301호 (암사동)</span><br>
+          <span>대표번호: </span>
+          <span>통신판매업신고번호: 제2023-서울강동-2521호</span>
+        </div>
+        <p class="footer__pending-note">※ 사업자 정보는 사업 개시 후 공개됩니다.</p>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2026 GoldenKP / 함광근. All rights reserved.</span>
+        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--clr-text-3);">
+          문의: dr.ham82@gmail.com
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const PRODUCT = { id: 'curicin-pf', name: '큐리신 PF', price: 200000 };
+    let qty = 1;
+
+    function renderSubtotal() {
+      document.getElementById('pdp-qty').textContent = qty;
+      document.getElementById('pdp-subtotal').textContent = formatPrice(PRODUCT.price * qty);
+    }
+
+    function changeQty(delta) {
+      qty = Math.max(1, qty + delta);
+      renderSubtotal();
+    }
+
+    function handleAddToCart() {
+      addToCart({ id: PRODUCT.id, name: PRODUCT.name, price: PRODUCT.price, qty });
+    }
+
+    // Nav scroll
+    window.addEventListener('scroll', () => {
+      document.querySelector('.nav').classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // 모바일 메뉴 토글
+    (function () {
+      const btn = document.querySelector('.mobile-menu-btn');
+      const links = document.querySelector('.nav__links');
+      if (!btn || !links) return;
+
+      const backdrop = document.createElement('div');
+      backdrop.className = 'nav__backdrop';
+      document.body.appendChild(backdrop);
+
+      function closeMenu() {
+        links.style.cssText = '';
+        backdrop.classList.remove('open');
+      }
+
+      function openMenu() {
+        links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--clr-bg);padding:1.5rem;border-bottom:1px solid var(--clr-border);gap:1rem;';
+        backdrop.classList.add('open');
+      }
+
+      btn.addEventListener('click', () => {
+        const isOpen = links.style.display === 'flex';
+        isOpen ? closeMenu() : openMenu();
+      });
+
+      backdrop.addEventListener('click', closeMenu);
+    })();
+
+    // 사업분야 드롭다운
+    (function () {
+      const dropdown = document.querySelector('.nav__dropdown');
+      const toggle = document.querySelector('.nav__dropdown-toggle');
+      if (!dropdown || !toggle) return;
+
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = dropdown.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          dropdown.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+  <script src="../js/cart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/admin-gate.js"></script>
+  <script>updateNav();</script>
+</body>
+</html>

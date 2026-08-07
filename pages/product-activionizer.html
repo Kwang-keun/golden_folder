@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="액티브 아이오나이저 — 필터·전기 없이 자력만으로 수돗물을 이온수로 변환하는 친환경 정수기. MADE IN KOREA.">
+  <title>액티브 아이오나이저 — GoldenKP 유통쇼핑몰</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <img src="../img/gk_logo.png" alt="GoldenKP 로고" class="nav__logo-mark nav__logo-img">
+        <span class="nav__logo-text">Golden<span>KP</span></span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="about.html">회사소개</a></li>
+        <li class="nav__dropdown">
+          <button class="nav__dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">사업분야</button>
+          <ul class="nav__dropdown-menu" role="list">
+            <li><a href="business.html">eSPORTS 협력사업</a></li>
+            <li><a href="../index.html">건강기능식품 쇼핑몰</a></li>
+            <li><a href="dongne.html">동네마켓서비스</a></li>
+            <li><a href="market_rs.html">시장조사 리포트</a></li>
+          </ul>
+        </li>
+        <li><a href="notice.html">공지사항</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:var(--space-md);">
+        <button class="nav__cart" type="button" onclick="openCartSummary()" aria-label="장바구니">
+          🛒<span id="cart-badge" class="nav__cart-badge">0</span>
+        </button>
+        <div id="nav-auth" class="nav__auth"></div>
+      </div>
+      <button class="mobile-menu-btn" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="pdp-breadcrumb">
+      <a href="../index.html">유통쇼핑몰</a> / <a href="../index.html#all">리빙가전</a> / <span>액티브 아이오나이저</span>
+    </div>
+
+    <div class="pdp-main">
+      <!-- 갤러리 -->
+      <div class="pdp-gallery">
+        <div class="pdp-gallery__main">
+          <img src="../img/products/activionizer.jpg" alt="액티브 아이오나이저">
+        </div>
+      </div>
+
+      <!-- 정보 -->
+      <div class="pdp-info">
+        <div class="pdp-badge-row">
+          <span class="pdp-badge">필터 사용 NO</span>
+          <span class="pdp-badge">전기 사용 NO</span>
+          <span class="pdp-badge">🇰🇷 MADE IN KOREA</span>
+        </div>
+        <div class="pdp-tag">리빙가전 · ESM 정수기</div>
+        <h1 class="pdp-title">액티브 아이오나이저</h1>
+        <p class="pdp-tagline">
+          수돗물을 강력한 자장 속으로 통과시켜 세정력·용해력·탈취력을 지닌 이온수로 변환하는 친환경 정수기입니다. 필터 교체나 전기 없이 한 번 설치로 반영구적으로 사용할 수 있습니다.
+        </p>
+
+        <div class="pdp-price-row">
+          <span class="pdp-price">900,000원</span>
+          <span class="pdp-price-note">/ 1개</span>
+        </div>
+
+        <div class="pdp-trust-row">
+          <span class="pdp-rating"><span class="stars">★★★★★</span> (0) 리뷰 준비중</span>
+          <span class="pdp-delivery">🚚 배송 준비중 · 사전예약 판매</span>
+        </div>
+
+        <div class="pdp-qty-row">
+          <div class="pdp-qty">
+            <button type="button" onclick="changeQty(-1)" aria-label="수량 감소">−</button>
+            <span id="pdp-qty">1</span>
+            <button type="button" onclick="changeQty(1)" aria-label="수량 증가">+</button>
+          </div>
+          <div class="pdp-subtotal">합계 <strong id="pdp-subtotal">900,000원</strong></div>
+        </div>
+
+        <div class="pdp-actions">
+          <button type="button" class="pdp-btn-cart" onclick="handleAddToCart()">🛒 장바구니 담기</button>
+          <button type="button" class="pdp-btn-buy" onclick="checkoutComingSoon()">바로 구매</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="pdp-sections">
+      <section class="pdp-section">
+        <h2 class="pdp-section__title">엑티브 아이오나이저란?</h2>
+        <div class="pdp-feature-grid">
+          <div class="pdp-feature-item">
+            <div class="pdp-feature-item__icon"><i class="fa-solid fa-droplet"></i></div>
+            <div class="pdp-feature-item__title">이온수 변환</div>
+            <div class="pdp-feature-item__desc">보통의 수돗물을 강력한 세정(용해력)·살균력·탈취 효과를 지닌 이온수로 변환합니다.</div>
+          </div>
+          <div class="pdp-feature-item">
+            <div class="pdp-feature-item__icon"><i class="fa-solid fa-magnet"></i></div>
+            <div class="pdp-feature-item__title">강력한 자력 활용</div>
+            <div class="pdp-feature-item__desc">높은 자력(Magnetic force)을 이용해 물 분자를 활성화하는 방식입니다.</div>
+          </div>
+          <div class="pdp-feature-item">
+            <div class="pdp-feature-item__icon"><i class="fa-solid fa-leaf"></i></div>
+            <div class="pdp-feature-item__title">친환경 라이프</div>
+            <div class="pdp-feature-item__desc">세제 사용을 획기적으로 줄여 삶을 윤택하게 하고 환경을 보호합니다.</div>
+          </div>
+          <div class="pdp-feature-item">
+            <div class="pdp-feature-item__icon"><i class="fa-solid fa-infinity"></i></div>
+            <div class="pdp-feature-item__title">평생 사용 · 무전원</div>
+            <div class="pdp-feature-item__desc">필터 교체나 전기 없이, 한 번의 설치로 오래 사용할 수 있습니다.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="pdp-section">
+        <h2 class="pdp-section__title">이렇게 활용해보세요</h2>
+        <div class="pdp-feature-grid">
+          <div class="pdp-feature-item">
+            <div class="pdp-feature-item__icon"><i class="fa-solid fa-shower"></i></div>
+            <div class="pdp-feature-item__title">샤워</div>
+            <div class="pdp-feature-item__desc">탁월한 용해력으로 물과 수건만으로도 화장품과 불순물을 씻어낼 수 있어 예민한 피부에도 부담이 적습니다.</div>
+          </div>
+          <div class="pdp-feature-item">
+            <div class="pdp-feature-item__icon"><i class="fa-solid fa-shirt"></i></div>
+            <div class="pdp-feature-item__title">세탁</div>
+            <div class="pdp-feature-item__desc">의류 냄새 제거와 세정력에 도움을 주며, 등산복·골프복·실크 등 손상에 민감한 의류 세탁에도 활용할 수 있습니다.</div>
+          </div>
+          <div class="pdp-feature-item">
+            <div class="pdp-feature-item__icon"><i class="fa-solid fa-sink"></i></div>
+            <div class="pdp-feature-item__title">주방·싱크대</div>
+            <div class="pdp-feature-item__desc">가스레인지·후드의 기름때를 면 행주만으로 가볍게 닦아낼 수 있고, 냉장고에 이온수를 담아두면 탈취 효과를 기대할 수 있습니다.</div>
+          </div>
+          <div class="pdp-feature-item">
+            <div class="pdp-feature-item__icon"><i class="fa-solid fa-paw"></i></div>
+            <div class="pdp-feature-item__title">반려동물 목욕</div>
+            <div class="pdp-feature-item__desc">부드러운 세정으로 목욕 후 상쾌함을 더하고, 털 관리에 도움을 줄 수 있습니다.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="pdp-section">
+        <h2 class="pdp-section__title">설치 안내</h2>
+        <p>기존 샤워기·수전에 별도 공구 없이 간편하게 연결해 사용할 수 있습니다. 전기나 필터가 필요 없어 설치 후 별도의 유지·보수 비용이 들지 않습니다.</p>
+      </section>
+
+      <section class="pdp-section">
+        <h2 class="pdp-section__title">상품 정보 제공고시</h2>
+        <table class="pdp-table">
+          <tbody>
+            <tr><th>제품명</th><td>액티브 아이오나이저 (esm ACTIVE IONIZER)</td></tr>
+            <tr><th>구분</th><td>자화 정수기 (생활용품)</td></tr>
+            <tr><th>작동 방식</th><td>자력을 이용한 이온수 변환 방식 (무전원 · 무필터)</td></tr>
+            <tr><th>원산지</th><td>대한민국 (MADE IN KOREA)</td></tr>
+            <tr><th>설치</th><td>샤워기·수전 등에 간편 연결 설치</td></tr>
+            <tr><th>주의사항</th><td>음용 목적으로 사용하실 경우 별도 확인이 필요합니다.</td></tr>
+          </tbody>
+        </table>
+        <div class="pdp-notice">
+          ※ 본 제품은 의료기기가 아니며, 특정 질병의 예방·치료·개선 효과를 나타내지 않습니다.<br>
+          ※ 본 페이지는 정식 출시 전 사전 안내용이며, 실제 판매 시 상품 정보 및 가격은 변경될 수 있습니다.
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__brand">
+          <a href="../index.html" class="nav__logo" style="margin-bottom:var(--space-md);">
+            <img src="../img/gk_logo.png" alt="GoldenKP 로고" class="nav__logo-mark nav__logo-img">
+            <span class="nav__logo-text">Golden<span>KP</span></span>
+          </a>
+          <p>지식과 기술로 새로운 가치를 만드는 1인 지식기업.<br>
+          eSPORTS · 건강기능식품 · 동네마켓서비스 · 시장조사 리포트</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>사업분야</h4>
+          <ul>
+            <li><a href="business.html">eSPORTS 협력사업</a></li>
+            <li><a href="../index.html">건강기능식품 쇼핑몰</a></li>
+            <li><a href="dongne.html">동네마켓서비스</a></li>
+            <li><a href="market_rs.html">시장조사 리포트</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>정보</h4>
+          <ul>
+            <li><a href="privacy.html">개인정보처리방침</a></li>
+            <li><a href="mailto:dr.ham82@gmail.com">이메일 문의</a></li>
+            <li><a href="https://goldenkp.com">goldenkp.com</a></li>
+            <li><a href="#" id="admin-gate-link" class="footer__admin-link">회원 로그인</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__legal">
+        <div class="footer__policies">
+          <a href="terms.html">이용약관</a>
+          <a href="privacy.html">개인정보처리방침</a>
+        </div>
+        <!-- 사업 개시 전까지 비공개: 오픈 시 아래 "footer__company-info--pending" 클래스와 안내 문구(footer__pending-note)를 제거하세요 -->
+        <div class="footer__company-info footer__company-info--pending">
+          <span>상호명: 골든케이피 크리에티브랩</span>
+          <span>대표자: 함광근</span>
+          <span>사업자등록번호: 233-21-02210</span>
+          <span>주소: 서울특별시 강동구 고덕로16길 44-9, 3층 301호 (암사동)</span><br>
+          <span>대표번호: </span>
+          <span>통신판매업신고번호: 제2023-서울강동-2521호</span>
+        </div>
+        <p class="footer__pending-note">※ 사업자 정보는 사업 개시 후 공개됩니다.</p>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2026 GoldenKP / 함광근. All rights reserved.</span>
+        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--clr-text-3);">
+          문의: dr.ham82@gmail.com
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const PRODUCT = { id: 'activionizer', name: '액티브 아이오나이저', price: 900000 };
+    let qty = 1;
+
+    function renderSubtotal() {
+      document.getElementById('pdp-qty').textContent = qty;
+      document.getElementById('pdp-subtotal').textContent = formatPrice(PRODUCT.price * qty);
+    }
+
+    function changeQty(delta) {
+      qty = Math.max(1, qty + delta);
+      renderSubtotal();
+    }
+
+    function handleAddToCart() {
+      addToCart({ id: PRODUCT.id, name: PRODUCT.name, price: PRODUCT.price, qty });
+    }
+
+    // Nav scroll
+    window.addEventListener('scroll', () => {
+      document.querySelector('.nav').classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // 모바일 메뉴 토글
+    (function () {
+      const btn = document.querySelector('.mobile-menu-btn');
+      const links = document.querySelector('.nav__links');
+      if (!btn || !links) return;
+
+      const backdrop = document.createElement('div');
+      backdrop.className = 'nav__backdrop';
+      document.body.appendChild(backdrop);
+
+      function closeMenu() {
+        links.style.cssText = '';
+        backdrop.classList.remove('open');
+      }
+
+      function openMenu() {
+        links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--clr-bg);padding:1.5rem;border-bottom:1px solid var(--clr-border);gap:1rem;';
+        backdrop.classList.add('open');
+      }
+
+      btn.addEventListener('click', () => {
+        const isOpen = links.style.display === 'flex';
+        isOpen ? closeMenu() : openMenu();
+      });
+
+      backdrop.addEventListener('click', closeMenu);
+    })();
+
+    // 사업분야 드롭다운
+    (function () {
+      const dropdown = document.querySelector('.nav__dropdown');
+      const toggle = document.querySelector('.nav__dropdown-toggle');
+      if (!dropdown || !toggle) return;
+
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = dropdown.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          dropdown.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+  <script src="../js/cart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/admin-gate.js"></script>
+  <script>updateNav();</script>
+</body>
+</html>

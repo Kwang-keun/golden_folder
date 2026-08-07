@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="대자연 된장·맛장 — 10년 숙성 전통장, 2018 대한민국 소비자평가대상 수상. 국내산 원료로 재래방식 그대로 담근 전통 발효식품.">
+  <title>대자연 된장 · 맛장 — GoldenKP 유통쇼핑몰</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <img src="../img/gk_logo.png" alt="GoldenKP 로고" class="nav__logo-mark nav__logo-img">
+        <span class="nav__logo-text">Golden<span>KP</span></span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="about.html">회사소개</a></li>
+        <li class="nav__dropdown">
+          <button class="nav__dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">사업분야</button>
+          <ul class="nav__dropdown-menu" role="list">
+            <li><a href="business.html">eSPORTS 협력사업</a></li>
+            <li><a href="../index.html">건강기능식품 쇼핑몰</a></li>
+            <li><a href="dongne.html">동네마켓서비스</a></li>
+            <li><a href="market_rs.html">시장조사 리포트</a></li>
+          </ul>
+        </li>
+        <li><a href="notice.html">공지사항</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:var(--space-md);">
+        <button class="nav__cart" type="button" onclick="openCartSummary()" aria-label="장바구니">
+          🛒<span id="cart-badge" class="nav__cart-badge">0</span>
+        </button>
+        <div id="nav-auth" class="nav__auth"></div>
+      </div>
+      <button class="mobile-menu-btn" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="pdp-breadcrumb">
+      <a href="../index.html">유통쇼핑몰</a> / <a href="../index.html#all">전통 발효식품</a> / <span>대자연 된장 · 맛장</span>
+    </div>
+
+    <div class="pdp-main">
+      <!-- 갤러리 -->
+      <div class="pdp-gallery">
+        <div class="pdp-gallery__main">
+          <img id="pdp-img" src="../img/products/doenjang-only.jpg" alt="대자연 된장">
+        </div>
+      </div>
+
+      <!-- 정보 -->
+      <div class="pdp-info">
+        <div class="pdp-badge-row">
+          <span class="pdp-badge">🏆 2018 대한민국 소비자평가대상</span>
+          <span class="pdp-badge">10년 숙성 전통장</span>
+          <span class="pdp-badge">원산지 100% 국내산</span>
+        </div>
+        <div class="pdp-tag">전통 발효식품</div>
+        <h1 class="pdp-title">대자연 된장 · 맛장</h1>
+        <p class="pdp-tagline">
+          10년 숙성 진품장으로 정성껏 담근 전통 발효장입니다. 대두·소맥·천일염 등 엄선된 국내산 원료를 재래방식 그대로 담가, 2018 대한민국 소비자평가대상을 수상했습니다.
+        </p>
+
+        <div class="pdp-price-row">
+          <span class="pdp-price" id="pdp-price">20,000원</span>
+          <span class="pdp-price-note">/ 500g</span>
+        </div>
+
+        <div class="pdp-trust-row">
+          <span class="pdp-rating"><span class="stars">★★★★★</span> (0) 리뷰 준비중</span>
+          <span class="pdp-delivery">🚚 배송 준비중 · 사전예약 판매</span>
+        </div>
+
+        <div class="pdp-options">
+          <div class="pdp-options__label">종류 선택</div>
+          <div class="pdp-options__grid" id="pdp-options">
+            <button type="button" class="pdp-option active" data-id="doenjang-500">
+              <strong>대자연 된장</strong>
+              <small>10년 숙성 전통장 · 20,000원</small>
+            </button>
+            <button type="button" class="pdp-option" data-id="majang-500">
+              <strong>대자연 맛장</strong>
+              <small>쇠고기·매운고추 양념장 · 30,000원</small>
+            </button>
+          </div>
+        </div>
+
+        <div class="pdp-qty-row">
+          <div class="pdp-qty">
+            <button type="button" onclick="changeQty(-1)" aria-label="수량 감소">−</button>
+            <span id="pdp-qty">1</span>
+            <button type="button" onclick="changeQty(1)" aria-label="수량 증가">+</button>
+          </div>
+          <div class="pdp-subtotal">합계 <strong id="pdp-subtotal">20,000원</strong></div>
+        </div>
+
+        <div class="pdp-actions">
+          <button type="button" class="pdp-btn-cart" onclick="handleAddToCart()">🛒 장바구니 담기</button>
+          <button type="button" class="pdp-btn-buy" onclick="checkoutComingSoon()">바로 구매</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="pdp-sections">
+      <section class="pdp-section">
+        <h2 class="pdp-section__title">브랜드 스토리</h2>
+        <p>청풍옥수·황토전원의 자연 그대로에서, 대자연은 10년간 숙성한 전통 진품장을 재래방식 그대로 담아왔습니다. 방부제를 사용하지 않고 엄선된 국내산 원료만을 사용해, 2018년 대한민국 소비자평가대상을 수상했습니다.</p>
+      </section>
+
+      <section class="pdp-section">
+        <h2 class="pdp-section__title">제품 특징</h2>
+        <div class="pdp-feature-grid">
+          <div class="pdp-feature-item">
+            <div class="pdp-feature-item__icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+            <div class="pdp-feature-item__title">10년 숙성 전통장</div>
+            <div class="pdp-feature-item__desc">재래방식 그대로 오랜 시간 숙성해 깊은 맛을 냈습니다.</div>
+          </div>
+          <div class="pdp-feature-item">
+            <div class="pdp-feature-item__icon"><i class="fa-solid fa-wheat-awn"></i></div>
+            <div class="pdp-feature-item__title">국내산 100%</div>
+            <div class="pdp-feature-item__desc">대두·소맥 등 원재료를 100% 국내산으로 사용했습니다.</div>
+          </div>
+          <div class="pdp-feature-item">
+            <div class="pdp-feature-item__icon"><i class="fa-solid fa-leaf"></i></div>
+            <div class="pdp-feature-item__title">무방부제</div>
+            <div class="pdp-feature-item__desc">방부제를 첨가하지 않은 전통 발효 방식입니다.</div>
+          </div>
+          <div class="pdp-feature-item">
+            <div class="pdp-feature-item__icon"><i class="fa-solid fa-trophy"></i></div>
+            <div class="pdp-feature-item__title">2018 소비자평가대상</div>
+            <div class="pdp-feature-item__desc">2018 대한민국 소비자평가대상을 수상한 브랜드입니다.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="pdp-section">
+        <h2 class="pdp-section__title">이렇게 즐겨보세요</h2>
+        <p id="pdp-usage">
+          된장찌개, 쌈장, 나물무침 등 일상 요리에 두루 활용할 수 있습니다. 국이나 찌개의 기본 육수 베이스로 사용하면 깊은 감칠맛을 더할 수 있습니다.
+        </p>
+      </section>
+
+      <section class="pdp-section">
+        <h2 class="pdp-section__title">상품 정보 제공고시</h2>
+        <table class="pdp-table" id="pdp-info-table">
+          <tbody>
+            <tr><th>식품의 유형</th><td id="info-type">전통된장</td></tr>
+            <tr><th>제품명</th><td id="info-name">대자연 된장</td></tr>
+            <tr><th>원재료명 및 함량</th><td id="info-ingredients">대두 55%, 종국 1.5%, 소맥 1.5%, 천일염 15%, 물 32%</td></tr>
+            <tr><th>내용량</th><td>500g</td></tr>
+            <tr><th>원산지</th><td>국내산 100%</td></tr>
+            <tr><th>제조원</th><td>인정원전통식품</td></tr>
+            <tr><th>판매원</th><td>(주)대자연코리아</td></tr>
+            <tr><th>보관방법 및 유통기한</th><td>냉암소 냉장보관(5℃ 이하) · 제품 하단 표기일까지</td></tr>
+            <tr><th>소비자상담</th><td>010-7304-9700</td></tr>
+          </tbody>
+        </table>
+        <div class="pdp-notice">
+          ※ 본 페이지는 정식 출시 전 사전 안내용이며, 실제 판매 시 상품 정보 및 가격은 변경될 수 있습니다.<br>
+          ※ 건강기능식품이 아닌 일반 식품이며, 특정 질병의 예방·치료 효과를 나타내지 않습니다.
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__brand">
+          <a href="../index.html" class="nav__logo" style="margin-bottom:var(--space-md);">
+            <img src="../img/gk_logo.png" alt="GoldenKP 로고" class="nav__logo-mark nav__logo-img">
+            <span class="nav__logo-text">Golden<span>KP</span></span>
+          </a>
+          <p>지식과 기술로 새로운 가치를 만드는 1인 지식기업.<br>
+          eSPORTS · 건강기능식품 · 동네마켓서비스 · 시장조사 리포트</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>사업분야</h4>
+          <ul>
+            <li><a href="business.html">eSPORTS 협력사업</a></li>
+            <li><a href="../index.html">건강기능식품 쇼핑몰</a></li>
+            <li><a href="dongne.html">동네마켓서비스</a></li>
+            <li><a href="market_rs.html">시장조사 리포트</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>정보</h4>
+          <ul>
+            <li><a href="privacy.html">개인정보처리방침</a></li>
+            <li><a href="mailto:dr.ham82@gmail.com">이메일 문의</a></li>
+            <li><a href="https://goldenkp.com">goldenkp.com</a></li>
+            <li><a href="#" id="admin-gate-link" class="footer__admin-link">회원 로그인</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__legal">
+        <div class="footer__policies">
+          <a href="terms.html">이용약관</a>
+          <a href="privacy.html">개인정보처리방침</a>
+        </div>
+        <!-- 사업 개시 전까지 비공개: 오픈 시 아래 "footer__company-info--pending" 클래스와 안내 문구(footer__pending-note)를 제거하세요 -->
+        <div class="footer__company-info footer__company-info--pending">
+          <span>상호명: 골든케이피 크리에티브랩</span>
+          <span>대표자: 함광근</span>
+          <span>사업자등록번호: 233-21-02210</span>
+          <span>주소: 서울특별시 강동구 고덕로16길 44-9, 3층 301호 (암사동)</span><br>
+          <span>대표번호: </span>
+          <span>통신판매업신고번호: 제2023-서울강동-2521호</span>
+        </div>
+        <p class="footer__pending-note">※ 사업자 정보는 사업 개시 후 공개됩니다.</p>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2026 GoldenKP / 함광근. All rights reserved.</span>
+        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--clr-text-3);">
+          문의: dr.ham82@gmail.com
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const VARIANTS = {
+      'doenjang-500': {
+        name: '대자연 된장 500g',
+        price: 20000,
+        img: '../img/products/doenjang-only.jpg',
+        alt: '대자연 된장',
+        usage: '된장찌개, 쌈장, 나물무침 등 일상 요리에 두루 활용할 수 있습니다. 국이나 찌개의 기본 육수 베이스로 사용하면 깊은 감칠맛을 더할 수 있습니다.',
+        type: '전통된장',
+        productName: '대자연 된장',
+        ingredients: '대두 55%, 종국 1.5%, 소맥 1.5%, 천일염 15%, 물 32%',
+      },
+      'majang-500': {
+        name: '대자연 맛장 500g',
+        price: 30000,
+        img: '../img/products/majang-only.jpg',
+        alt: '대자연 맛장',
+        usage: '쇠고기와 매운고추를 다져 만든 감칠맛 좋은 양념장입니다. 국이나 찌개, 칼국수에 넣거나 비빔밥·나물무침에 곁들이면 좋고, 특히 삼겹살 쌈장으로 잘 어울립니다.',
+        type: '전통장(양념장)',
+        productName: '대자연 맛장',
+        ingredients: '쇠고기, 매운고추 등 양념 재료(다짐)',
+      },
+    };
+
+    let currentId = 'doenjang-500';
+    let qty = 1;
+
+    function renderVariant() {
+      const v = VARIANTS[currentId];
+      document.getElementById('pdp-img').src = v.img;
+      document.getElementById('pdp-img').alt = v.alt;
+      document.getElementById('pdp-price').textContent = formatPrice(v.price);
+      document.getElementById('pdp-usage').textContent = v.usage;
+      document.getElementById('info-type').textContent = v.type;
+      document.getElementById('info-name').textContent = v.productName;
+      document.getElementById('info-ingredients').textContent = v.ingredients;
+      document.querySelectorAll('.pdp-option').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.id === currentId);
+      });
+      renderSubtotal();
+    }
+
+    function renderSubtotal() {
+      const v = VARIANTS[currentId];
+      document.getElementById('pdp-qty').textContent = qty;
+      document.getElementById('pdp-subtotal').textContent = formatPrice(v.price * qty);
+    }
+
+    function changeQty(delta) {
+      qty = Math.max(1, qty + delta);
+      renderSubtotal();
+    }
+
+    function handleAddToCart() {
+      const v = VARIANTS[currentId];
+      addToCart({ id: currentId, name: v.name, price: v.price, qty });
+    }
+
+    document.getElementById('pdp-options').addEventListener('click', (e) => {
+      const btn = e.target.closest('.pdp-option');
+      if (!btn) return;
+      currentId = btn.dataset.id;
+      qty = 1;
+      renderVariant();
+    });
+
+    renderVariant();
+
+    // Nav scroll
+    window.addEventListener('scroll', () => {
+      document.querySelector('.nav').classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // 모바일 메뉴 토글 (main.js의 initMobileMenu와 동일한 로직)
+    (function () {
+      const btn = document.querySelector('.mobile-menu-btn');
+      const links = document.querySelector('.nav__links');
+      if (!btn || !links) return;
+
+      const backdrop = document.createElement('div');
+      backdrop.className = 'nav__backdrop';
+      document.body.appendChild(backdrop);
+
+      function closeMenu() {
+        links.style.cssText = '';
+        backdrop.classList.remove('open');
+      }
+
+      function openMenu() {
+        links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--clr-bg);padding:1.5rem;border-bottom:1px solid var(--clr-border);gap:1rem;';
+        backdrop.classList.add('open');
+      }
+
+      btn.addEventListener('click', () => {
+        const isOpen = links.style.display === 'flex';
+        isOpen ? closeMenu() : openMenu();
+      });
+
+      backdrop.addEventListener('click', closeMenu);
+    })();
+
+    // 사업분야 드롭다운
+    (function () {
+      const dropdown = document.querySelector('.nav__dropdown');
+      const toggle = document.querySelector('.nav__dropdown-toggle');
+      if (!dropdown || !toggle) return;
+
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = dropdown.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          dropdown.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+  <script src="../js/cart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/admin-gate.js"></script>
+  <script>updateNav();</script>
+</body>
+</html>
