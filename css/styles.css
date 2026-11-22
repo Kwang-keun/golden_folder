@@ -1745,8 +1745,7 @@ em {
 
 /* ═══════════════════════════════════════════════
    PRODUCT DETAIL PAGE (PDP) — shared by
-   pages/product-doenjang.html, product-curicin.html,
-   product-activionizer.html
+   pages/product-curicin.html, product-activionizer.html
    ═══════════════════════════════════════════════ */
 .pdp-breadcrumb {
   padding: calc(var(--nav-height) + var(--space-lg)) 0 var(--space-md);
